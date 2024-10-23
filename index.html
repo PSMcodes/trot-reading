@@ -24,6 +24,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#">Daily Readings</a></li>
+          <li><a href="#">Booking</a></li>
           <li><a href="#">Testimonial</a></li>
         </ul>
       </nav>
@@ -65,61 +66,92 @@
       </div>
     </div>
     <!-- about Section -->
-    <h1 class="heading">About me </h1>
+    <h1 class="heading">About me</h1>
     <section id="about">
       <div class="container">
         <div class="img-container">
-          <img src="assests/Poster.jpg" alt="">
+          <img src="assests/Poster.jpg" alt="" />
         </div>
         <div class="about-content">
-          <p class="heading">Astrological <br>Consultation</p>
-          <p class="content">Welcome to Fortune Wand Neha, where intuition meets insight! I am Neha Jella, a passionate and experienced tarot reader, dedicated to helping you navigate life’s uncertainties with clarity and wisdom. Tarot is a powerful tool for self-reflection, guidance, and personal growth, and my goal is to empower you with the answers and direction you seek</p>
+          <p class="heading">Astrological <br />Consultation</p>
+          <p class="content">
+            Welcome to Fortune Wand Neha, where intuition meets insight! I am
+            Neha Jella, a passionate and experienced tarot reader, dedicated to
+            helping you navigate life’s uncertainties with clarity and wisdom.
+            Tarot is a powerful tool for self-reflection, guidance, and personal
+            growth, and my goal is to empower you with the answers and direction
+            you seek
+          </p>
         </div>
       </div>
     </section>
+    <!-- readings -->
     <section id="readings">
-    <h1 class="heading">Daily Readings </h1>
-    <div class="container">
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Reading</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          <tr>
-            <td>19-10-2024</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, id!</td>
-          </tr>
-          
-        </tbody>
-      </table>
-    </div>
+      <h1 class="heading">Daily Readings</h1>
+      <div class="container">
+        <div id="readingContent">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+          ab, quis cum commodi culpa inventore aspernatur sed debitis fuga hic
+          mollitia libero facere. Repellendus sapiente perspiciatis, laborum
+          alias modi sunt.
+        </div>
+      </div>
     </section>
+    <!-- booking -->
+    <section id="booking">
+      <img src="assests/poster3.png" alt="" />
+      <div class="container">
+        <h1>Discover Your Own Path</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          reprehenderit rerum earum eaque ut autem, expedita maxime aliquam
+          exercitationem illum hic sequi tenetur vel facilis adipisci eum,
+          praesentium non.
+        </p>
+        <a href="#">Book a Appointment</a>
+      </div>
+    </section>
+    <!-- video -->
+    <section id="vid">
+      <button id="play-btn"><i class="fa fa-play" id="icon"></i></button>
+      <video src="./assests/video.mp4" loop id="video"></video>
+    </section>
+    <!-- testimonial -->
+    <section id="testimonial">
+      <h3>Testimonials</h3>
+      <h1>What Our Customer Says</h1>
+      <div class="slider">
+        <div class="slides">
+          <img src="assests/coustomer.jpg" alt="" />
+          <span class="caption"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+          >
+        </div>
+        <div class="slides">
+          <img src="assests/coustomer1.jpg" alt="" />
+          <span class="caption"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+          >
+        </div>
+        <div class="slides">
+          <img src="assests/coustomer2.jpg" alt="" />
+          <span class="caption"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+          >
+        </div>
+        <div class="btn-group">
+          <button class="slider-btn prevbtn" onclick="showSlide(-1)">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button class="slider-btn nextbtn" onclick="showSlide(1)">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- categories -->
+     <section id="categories">
+      
+     </section>
   </body>
 </html>

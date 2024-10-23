@@ -17,8 +17,9 @@
   scroll-behavior: smooth;
 }
 body {
-  background: linear-gradient(to bottom, var(--color1), var(--color4));
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, var(--color1), var(--color4),var(--color1));
+  background-repeat: no-repeat; 
+  overflow-x:hidden ;
 }
 
 header {
@@ -38,7 +39,7 @@ nav {
   right: 0;
   z-index: 5;
 }
-.scrolled{
+.scrolled {
   background: rgba(51, 51, 51, 0.7);
 }
 ul {
@@ -101,7 +102,7 @@ section.banner .banner-heading {
 /* marquee */
 
 .marquee {
-  margin: 10px;
+  /* margin: 10px; */
   position: relative;
   width: 100vw;
   max-width: 100%;
@@ -112,6 +113,7 @@ section.banner .banner-heading {
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: var(--color2);
+  background: var(--color1);
 }
 
 .track {
@@ -122,6 +124,7 @@ section.banner .banner-heading {
 }
 .content {
   font-size: 1.5em;
+  color: var(--color6);
 }
 
 @keyframes marquee {
@@ -140,13 +143,13 @@ section.banner .banner-heading {
 /* about us */
 #about {
   /* display: flex; */
-  background: #333;
+  background: var(--color1);
   padding: 10px;
   height: 500px;
 }
-.heading{
-  background: #333;
-  padding: 10px;
+.heading {
+  background: var(--color1);
+  padding: 20px;
   font-family: Modern Antiqua;
   text-align: center;
   font-size: 3em;
@@ -194,32 +197,174 @@ section.banner .banner-heading {
 }
 
 #about .about-content .content {
-  color:var(--color4);
+  color: var(--color4);
   text-align: justify;
   font-size: 1em;
   width: 80%;
   margin: auto;
 }
 
-#readings{
-  padding: 1.5em;
+#readings {
+  padding: 2em;
   background: url(/assests/poster2.jpg);
-  height: 700px;
+  height: 500px;
   background-size: cover;
   color: var(--color5);
 }
 
-#readings .heading{
-  background:none;
+#readings .heading {
+  background: none;
 }
 
-#readings table{
-  /* background: grey; */
-  border-collapse: collapse;
+#readings .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+#readings #readingContent {
+  width: 60%;
+  font-size: 2em;
 }
 
-#readings table td,th{
-  padding: 15px;
-  border-top: 2px solid var(--color2);
-  border-bottom: 2px solid var(--color2);
+#booking{
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  background: #0A001E;
+}
+
+#booking img{
+  width: 30%;
+}
+
+#booking .container{
+  width: 30%;
+  background: var(--color6);
+  font-size: 1.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#booking .container h1{
+  font-family: "Mordern Antiqua";
+  margin: 15px 0;
+}
+
+#booking .container p{
+  font-size: 0.8em;
+  margin: 15px 0;
+}
+#booking .container a{
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+  width: fit-content;
+  padding: 10px;
+  background: var(--color3);
+  color: var(--color6);
+}
+
+#booking .container a:hover{
+  background:var(--color1);
+}
+
+#vid{
+  width: 100%;  
+  height: 500px;
+  position: relative;
+}
+
+#vid video{
+  width: 100%;  
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+#vid #play-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40px,-40px);
+  font-size: 6em;
+  color: white;
+  z-index: 2;
+  background: none;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+}
+
+#testimonial{
+  padding: 10px;
+  height: 500px;
+  background: var(--color1);
+  display: flex;
+  border: 2px solid;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#testimonial h1,h3{
+  font-family: "Mordern Antiqua";
+  font-weight: bold;
+  color: var(--color2);
+}
+
+#testimonial .slider{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+#testimonial .slides {
+  width: 100%;
+  height: 80%;
+  display: none;
+}
+
+#testimonial .slides.active{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#testimonial .slides img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#testimonial .slides .caption{
+  width: 80%;
+  color: var(--color6);
+  text-align: center;
+}
+
+#testimonial .btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+#testimonial .btn-group .slider-btn{
+  width: 100px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+  color: var(--color2);
+  transition: .8s;
+}
+
+#testimonial .btn-group .slider-btn:hover i{
+  scale: 1.1;
 }
