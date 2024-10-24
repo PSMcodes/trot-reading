@@ -6,6 +6,7 @@
     <title>Neha Jella | Tarot reader</title>
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
 
     <!-- particleJS -->
     <script defer src="js/particle.js"></script>
@@ -20,13 +21,14 @@
     <header class="mainHeader">
       <nav id="navbar">
         <span class="logo">Fortune Wand Neha</span>
-        <ul>
+        <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#">Daily Readings</a></li>
           <li><a href="#">Booking</a></li>
           <li><a href="#">Testimonial</a></li>
         </ul>
+        <i class="fa-solid fa-bars burger" aria-hidden="true"></i>
       </nav>
       <section class="banner" id="home">
         <div id="particle"></div>
@@ -150,8 +152,126 @@
       </div>
     </section>
     <!-- categories -->
-     <section id="categories">
-      
-     </section>
+    <section id="categories">
+      <input type="radio" class="radiobtn" name="position" />
+      <input type="radio" class="radiobtn" name="position" checked />
+      <input type="radio" class="radiobtn" name="position" />
+      <main id="carousel">
+        <div class="item">
+          <img src="assests/categories/category1.jpg" alt="" />
+          <div class="content">
+            <h3>Love & Relationship Tarot</h3>
+            <span
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </span>
+          </div>
+          <button>Learn More</button>
+        </div>
+        <div class="item">
+          <img src="assests/categories/category2.jpg" alt="" />
+          <div class="content">
+            <h3>Career / Business Tarot</h3>
+            <span
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </span>
+          </div>
+          <button>Learn More</button>
+        </div>
+        <div class="item">
+          <img src="assests/categories/category3.png" alt="" />
+          <div class="content">
+            <h3>Health Tarot</h3>
+            <span
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </span>
+          </div>
+          <button>Learn More</button>
+        </div>
+      </main>
+    </section>
+    <!-- whatsApp Channel -->
+    <section id="whatsappChannel">
+      <h1>
+        Join Our WhatsApp Channel for <br />
+        daily Horoscope and Tarot Readings
+      </h1>
+      <a href="#">Join Channel</a>
+    </section>
+    <!-- instagram Integration -->
+    <section id="instagram">
+      <div class="instafeed-grid">
+        <figure class="border-radius-0px">
+          <a href="https://www.instagram.com" target="_blank">
+            <img
+              src="./assests/coustomer1.jpg"
+              class="insta-image"
+              alt=""
+              data-no-retina="" /><span class="insta-icon"
+              ><i class="fa-brands fa-instagram"></i></span
+          ></a>
+        </figure>
+      </div>
+      <div class="instafeed-grid">
+        <figure class="border-radius-0px">
+          <a href="https://www.instagram.com" target="_blank">
+            <img
+              src="./assests/coustomer1.jpg"
+              class="insta-image"
+              alt="" /><span class="insta-icon"
+              ><i class="fa-brands fa-instagram"></i></span
+          ></a>
+        </figure>
+      </div>
+      <div class="instafeed-grid">
+        <figure class="border-radius-0px">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              src="./assests/coustomer1.jpg"
+              class="insta-image"
+              alt=""
+              data-no-retina="" /><span class="insta-icon"
+              ><i class="fa-brands fa-instagram"></i></span
+          ></a>
+        </figure>
+      </div>
+      <div class="instafeed-grid">
+        <figure class="border-radius-0px">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              src="./assests/coustomer1.jpg"
+              class="insta-image"
+              alt=""
+              data-no-retina="" /><span class="insta-icon"
+              ><i class="fa-brands fa-instagram"></i></span
+          ></a>
+        </figure>
+      </div>
+      <div class="instafeed-grid">
+        <figure class="border-radius-0px">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              src="./assests/coustomer1.jpg"
+              class="insta-image"
+              alt=""
+              data-no-retina="" /><span class="insta-icon"
+              ><i class="fa-brands fa-instagram"></i></span
+          ></a>
+        </figure>
+      </div>
+      <div class="absolute-middle-center z-index-1 w-auto">
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          class="btn btn-small btn-switch-text btn-dark-gray btn-round-edge fw-700 left-icon btn-box-shadow instagram-button"
+        >
+          <span>
+            <span><i class="fa-brands fa-instagram fs-17"></i></span>
+            <span class="btn-double-text primary-font" data-text="Instagram"
+              >Instagram</span
+            >
+          </span>
+        </a>
+      </div>
+    </section>
   </body>
 </html>

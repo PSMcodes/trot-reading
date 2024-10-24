@@ -127,6 +127,18 @@ window.addEventListener("scroll", function () {
   }
 });
 
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelector(".nav-links");
+
+burger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  if (navLinks.classList.contains("active")) {
+    burger.classList.replace("fa-bars", "fa-xmark");
+  } else {
+    burger.classList.replace("fa-xmark", "fa-bars");
+  }
+});
+
 // video controls
 let playbtn = document.getElementById("play-btn");
 let isplaying = false;
@@ -169,3 +181,13 @@ function showSlide(n) {
   slides[currentSlide].classList.add("active");
 }
 showSlide(0);
+
+// categories
+let catCard = document.querySelectorAll(".item");
+let radioBtns = document.querySelectorAll(".radiobtn");
+catCard.forEach((element, index) => {
+  element.addEventListener("click", () => {
+    console.log(radioBtns[index]);
+    radioBtns[index].checked = true;
+  });
+});
