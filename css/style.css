@@ -17,9 +17,14 @@
   scroll-behavior: smooth;
 }
 body {
-  background: linear-gradient(to bottom, var(--color1), var(--color4),var(--color1));
-  background-repeat: no-repeat; 
-  overflow-x:hidden ;
+  background: linear-gradient(
+    to bottom,
+    var(--color1),
+    var(--color4),
+    var(--color1)
+  );
+  background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 header {
@@ -233,19 +238,19 @@ section.banner .banner-heading {
   font-size: 2em;
 }
 
-#booking{
+#booking {
   padding: 1.5em;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
-  background: #0A001E;
+  background: #0a001e;
 }
 
-#booking img{
+#booking img {
   width: 30%;
 }
 
-#booking .container{
+#booking .container {
   width: 30%;
   background: var(--color6);
   font-size: 1.5em;
@@ -255,16 +260,16 @@ section.banner .banner-heading {
   justify-content: space-around;
 }
 
-#booking .container h1{
+#booking .container h1 {
   font-family: "Mordern Antiqua";
   margin: 15px 0;
 }
 
-#booking .container p{
+#booking .container p {
   font-size: 0.8em;
   margin: 15px 0;
 }
-#booking .container a{
+#booking .container a {
   text-decoration: none;
   display: inline-block;
   transition: 0.3s;
@@ -274,28 +279,28 @@ section.banner .banner-heading {
   color: var(--color6);
 }
 
-#booking .container a:hover{
-  background:var(--color1);
+#booking .container a:hover {
+  background: var(--color1);
 }
 
-#vid{
-  width: 100%;  
+#vid {
+  width: 100%;
   height: 500px;
   position: relative;
 }
 
-#vid video{
-  width: 100%;  
+#vid video {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   aspect-ratio: 16/9;
 }
 
-#vid #play-btn{
+#vid #play-btn {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-40px,-40px);
+  transform: translate(-40px, -40px);
   font-size: 6em;
   color: white;
   z-index: 2;
@@ -305,7 +310,7 @@ section.banner .banner-heading {
   opacity: 0.5;
 }
 
-#testimonial{
+#testimonial {
   padding: 10px;
   height: 500px;
   background: var(--color1);
@@ -316,14 +321,15 @@ section.banner .banner-heading {
   flex-direction: column;
 }
 
-#testimonial h1,h3{
+#testimonial h1,
+h3 {
   font-family: "Mordern Antiqua";
   font-weight: bold;
   color: var(--color2);
   font-size: 1.5em;
 }
 
-#testimonial .slider{
+#testimonial .slider {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,21 +343,21 @@ section.banner .banner-heading {
   display: none;
 }
 
-#testimonial .slides.active{
+#testimonial .slides.active {
   display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#testimonial .slides img{
+#testimonial .slides img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-#testimonial .slides .caption{
+#testimonial .slides .caption {
   width: 80%;
   color: var(--color6);
   text-align: center;
@@ -362,22 +368,22 @@ section.banner .banner-heading {
   justify-content: center;
 }
 
-#testimonial .btn-group .slider-btn{
+#testimonial .btn-group .slider-btn {
   width: 100px;
   background: none;
   border: none;
   outline: none;
   font-size: 1.5em;
   color: var(--color2);
-  transition: .8s;
+  transition: 0.8s;
 }
 
-#testimonial .btn-group .slider-btn:hover i{
+#testimonial .btn-group .slider-btn:hover i {
   scale: 1.1;
 }
 
 /* whatsapp Channel */
-#whatsappChannel{
+#whatsappChannel {
   height: 300px;
   display: flex;
   justify-content: center;
@@ -385,14 +391,14 @@ section.banner .banner-heading {
   background: url(/assests/poster2.jpg);
 }
 
-#whatsappChannel h1{
+#whatsappChannel h1 {
   color: var(--color2);
   margin: 0 20px;
   padding: 0 20px;
 }
 
-#whatsappChannel a{
-  color: var(--color6)  ;
+#whatsappChannel a {
+  color: var(--color6);
   background: var(--color3);
   padding: 10px;
   text-decoration: none;
@@ -436,7 +442,7 @@ div.item {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  box-shadow: 5px 5px 5px var(--color1) , -5px -5px 5px var(--color1);
+  box-shadow: 5px 5px 5px var(--color1), -5px -5px 5px var(--color1);
   border-radius: 12px;
   --r: calc(var(--position) - var(--offset));
   --abs: max(calc(var(--r) * -1), var(--r));
@@ -455,7 +461,6 @@ div.item:nth-of-type(2) {
 div.item:nth-of-type(3) {
   --offset: 3;
 }
-
 
 input:nth-of-type(1) {
   grid-column: 2 / 3;
@@ -481,7 +486,7 @@ input:nth-of-type(3):checked ~ main#carousel {
   --position: 3;
 }
 
-div.item img{
+div.item img {
   display: block;
   margin: 0 auto;
   width: 80%;
@@ -494,16 +499,16 @@ div.item .content {
   justify-content: center;
   align-items: center;
 }
-div.item .content h3{
+div.item .content h3 {
   color: var(--color1);
 }
 
-div.item .content span{
+div.item .content span {
   font-size: 1em;
   text-align: center;
 }
 
-div.item button{
+div.item button {
   background: var(--color2);
   color: #4b0082;
   padding: 10px;
@@ -511,21 +516,44 @@ div.item button{
   outline: none;
 }
 
-#instagram{
+#instagram {
+  background: var(--color3);
+  background-position: left bottom;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+#instagram .container{
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
+}
+
+
+
+#instagram .insta-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+#instagram figure .insta-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: 500px;
+  font-size: 1.5em;
+  color: var(--color5);
+  display: none;
 }
 
-#instagram .instafeed-grid {
-  margin: 30px ;
-  height: 100px;
-  background: grey;
+#instagram figure:hover .insta-icon {
+  display: flex;
 }
-
-#instagram .insta-image{
-  width: 100%;
-}
-
