@@ -24,7 +24,7 @@ body {
     var(--color1)
   );
   background-repeat: no-repeat;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 .loader {
   position: fixed;
@@ -188,7 +188,6 @@ section.banner .banner-heading {
 
 /* about us */
 #about {
-  /* display: flex; */
   background: var(--color1);
   padding: 10px;
   height: 500px;
@@ -567,8 +566,6 @@ div.item button {
   gap: 10px;
   transition: 0.5s;
 }
-
-
 
 #instagram .container .images {
   position: relative;
