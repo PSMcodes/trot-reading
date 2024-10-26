@@ -115,6 +115,12 @@ particlesJS("particle", {
   },
 });
 
+// lodaer
+document.onreadystatechange = function() {
+  document.getElementById('loader').style.display = 'none'; // Hide loader
+  document.querySelector('.content').style.display = 'block'; // Show content
+};
+
 // navbar
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");

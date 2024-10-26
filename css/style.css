@@ -24,7 +24,43 @@ body {
     var(--color1)
   );
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+}
+.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  z-index: 99; /* Ensure loader is on top */
+}
+
+.zodiac-wheel {
+  width: 100px; /* Size of the zodiac wheel */
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #fff; /* White border */
+  border-top-color: #ffcc00; /* Gold color for effect */
+  animation: spin 2s linear infinite; /* Spinning animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.content {
+  display: none; /* Hide content initially */
 }
 
 header {
@@ -33,12 +69,11 @@ header {
 }
 
 nav {
-  background: transparent;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  padding: 10px;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -207,7 +242,7 @@ section.banner .banner-heading {
   text-align: center;
 }
 
-#about .about-content .content {
+#about .about-content .content-text {
   color: var(--color4);
   text-align: justify;
   font-size: 1em;
@@ -315,7 +350,6 @@ section.banner .banner-heading {
   height: 500px;
   background: var(--color1);
   display: flex;
-  border: 2px solid;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -516,8 +550,10 @@ div.item button {
   outline: none;
 }
 
+/* instagram */
+
 #instagram {
-  background: var(--color3);
+  background: var(--color1);
   background-position: left bottom;
   height: 300px;
   display: grid;
@@ -529,31 +565,85 @@ div.item button {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   gap: 10px;
+  transition: 0.5s;
 }
 
 
 
-#instagram .insta-image {
+#instagram .container .images {
+  position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
+#instagram .container .images img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
 
-#instagram figure .insta-icon {
+#instagram .container .images a {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
-  color: var(--color5);
-  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  color: var(--color6);
+  text-decoration: none;
+  font-size: large;
+  transition: 0.5s;
 }
 
-#instagram figure:hover .insta-icon {
+#instagram .container :hover a{
+  opacity: 1;
+}
+/* footer */
+footer{
+  height: 300px;
+  background: linear-gradient(to bottom ,var(--color1),var(--color3));
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+
+footer .footerheading {
+  font-family: Modern Antiqua;
+  text-align: center;
+  font-size: 3em;
+  color: var(--color2);
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+footer .tagline {
+  font-size: 1.5em;
+  color: #bbb;
+}
+
+footer .social-icons {
+  margin-top: 20px;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+footer .social-icons i {
+  width: 30px;
+  height: 30px;
+  color: var(--color6);
 }
