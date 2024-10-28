@@ -12,6 +12,18 @@
     <script defer src="js/particle.js"></script>
     <script defer src="js/index.js"></script>
 
+    <!-- meta tags -->
+    <meta property="og:title" content="Neha Jella | Tarot reader" />
+    <meta
+      name="description"
+      content="Neha Jella - Welcome to Fortune Wand Neha, where intuition meets insight! I am Neha Jella, a passionate and experienced tarot reader, dedicated to helping you navigate life’s uncertainties with clarity and wisdom."
+    />
+    <meta property="og:image" content="#" />
+    <meta property="og:url" content="#" />
+    <meta property="og:type" content="Tarot reader" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:image:width" content="100" />
+
     <link rel="stylesheet"
     href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -21,7 +33,7 @@
     <div id="loader" class="loader">
       <div class="zodiac-wheel"></div>
       <p>Aligning the Stars...</p>
-  </div>
+    </div>
     <!-- header -->
     <header class="mainHeader">
       <nav id="navbar">
@@ -38,16 +50,15 @@
       <section class="banner" id="home">
         <div id="particle"></div>
         <span class="bgText">Fortune</span>
-        <img src="assests/banner.png" alt="" class="bannerImg"/>
+        <img src="assests/banner.png" alt="" class="bannerImg" draggable="false"/>
         <span class="banner-heading">
-          <small>Fortune Wand</small><br />
-          <big>Neha</big>
+          <small>The</small>
+          <big>Tarot Reader</big>
         </span>
         <img
           src="assests/top_divider.png"
-          alt=""
+          draggable="false"
           width="100%"
-          class=""
           style="position: absolute; bottom: 0"
         />
       </section>
@@ -73,50 +84,36 @@
         </div>
       </div>
     </div>
-    <!-- about Section -->
-    <h1 class="heading">About me</h1>
-    <section id="about">
+    <!-- booking -->
+    <section id="booking">
+      <img src="assests/poster3.png" alt="" draggable="false"/>
       <div class="container">
-        <div class="img-container">
-          <img src="assests/Poster.jpg" alt="" />
-        </div>
-        <div class="about-content">
-          <p class="heading">Astrological <br />Consultation</p>
-          <p class="content-text">
-            Welcome to Fortune Wand Neha, where intuition meets insight! I am
-            Neha Jella, a passionate and experienced tarot reader, dedicated to
-            helping you navigate life’s uncertainties with clarity and wisdom.
-            Tarot is a powerful tool for self-reflection, guidance, and personal
-            growth, and my goal is to empower you with the answers and direction
-            you seek
-          </p>
-        </div>
+        <h1>Discover Your Own Path</h1>
+        <p>
+          Empower yourself with insights that illuminate your unique journey.
+          Our tarot readings offer clarity and guidance, helping you navigate
+          life’s crossroads and uncover the potential that lies ahead.
+        </p>
+        <a href="#">Book a Appointment</a>
       </div>
     </section>
+
     <!-- readings -->
     <section id="readings">
       <h1 class="heading">Daily Readings</h1>
       <div class="container">
         <div id="readingContent">
-          Begin each day with insight and guidance through our Daily Readings. Discover fresh perspectives, find clarity, and navigate challenges with ease as the cards reveal what’s in store for you today.
+          Begin each day with insight and guidance through our Daily Readings.
+          Discover fresh perspectives, find clarity, and navigate challenges
+          with ease as the cards reveal what’s in store for you today.
         </div>
       </div>
     </section>
-    <!-- booking -->
-    <section id="booking">
-      <img src="assests/poster3.png" alt="" />
-      <div class="container">
-        <h1>Discover Your Own Path</h1>
-        <p>
-          Empower yourself with insights that illuminate your unique journey. Our tarot readings offer clarity and guidance, helping you navigate life’s crossroads and uncover the potential that lies ahead.
-        </p>
-        <a href="#">Book a Appointment</a>
-      </div>
-    </section>
+    
     <!-- video -->
     <section id="vid">
       <button id="play-btn"><i class="fa fa-play" id="icon"></i></button>
-      <video src="./assests/video.mp4" loop id="video"></video>
+      <video src="./assests/video.mp4" controls loop id="video"></video>
     </section>
     <!-- testimonial -->
     <section id="testimonial">
@@ -124,19 +121,19 @@
       <h1>What Our Customer Says</h1>
       <div class="slider">
         <div class="slides">
-          <img src="assests/coustomer.jpg" alt="" />
+          <img src="assests/coustomer.jpg" alt="" draggable="false"/>
           <span class="caption"
             >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
           >
         </div>
         <div class="slides">
-          <img src="assests/coustomer1.jpg" alt="" />
+          <img src="assests/coustomer1.jpg" alt="" draggable="false"/>
           <span class="caption"
             >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
           >
         </div>
         <div class="slides">
-          <img src="assests/coustomer2.jpg" alt="" />
+          <img src="assests/coustomer2.jpg" alt="" draggable="false"/>
           <span class="caption"
             >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
           >
@@ -158,36 +155,92 @@
       <input type="radio" class="radiobtn" name="position" />
       <main id="carousel">
         <div class="item">
-          <img src="assests/categories/category1.jpg" alt="" />
+          <img src="assests/categories/category1.jpg" alt="" draggable="false"/>
           <div class="content">
             <h3>Love & Relationship Tarot</h3>
             <span
-              >Find clarity and insight into your love life with our Love & Relationship Tarot readings.
+              >Find clarity and insight into your love life with our Love &
+              Relationship Tarot readings.
             </span>
           </div>
           <button>Learn More</button>
         </div>
         <div class="item">
-          <img src="assests/categories/category2.jpg" alt="" />
+          <img src="assests/categories/category2.jpg" alt="" draggable="false"/>
           <div class="content">
             <h3>Career / Business Tarot</h3>
             <span
-              >Empower your career or business path with our insightful Tarot readings.
+              >Empower your career or business path with our insightful Tarot
+              readings.
             </span>
           </div>
           <button>Learn More</button>
         </div>
         <div class="item">
-          <img src="assests/categories/category3.png" alt="" />
+          <img src="assests/categories/category3.png" alt="" draggable="false"/>
           <div class="content">
             <h3>Health Tarot</h3>
             <span
-              >Discover guidance for well-being and balance with our Health Tarot readings.
+              >Discover guidance for well-being and balance with our Health
+              Tarot readings.
             </span>
           </div>
           <button>Learn More</button>
         </div>
       </main>
+    </section>
+    <!-- about Section -->
+    <section id="about">
+      <h1 class="heading">About me</h1>
+      <div class="container">
+        <img src="assests/Poster.jpg" alt="" draggable="false"/>
+        <div class="about-content">
+          <p class="heading">Astrological <br />Consultation</p>
+          <p class="content-text">
+            Welcome to Fortune Wand Neha, where intuition meets insight! I am
+            Neha Jella, a passionate and experienced tarot reader, dedicated to
+            helping you navigate life’s uncertainties with clarity and wisdom.
+            Tarot is a powerful tool for self-reflection, guidance, and personal
+            growth, and my goal is to empower you with the answers and direction
+            you seek
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- instagram Integration -->
+    <section id="instagram">
+      <div class="container">
+        <div class="images">
+          <img src="assests/coustomer1.jpg" alt="" draggable="false"/>
+          <a href="https://www.instagram.com"
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div class="images">
+          <img src="assests/coustomer1.jpg" alt="" draggable="false"/>
+          <a href="https://www.instagram.com"
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div class="images">
+          <img src="assests/coustomer1.jpg" alt="" draggable="false"/>
+          <a href="https://www.instagram.com"
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div class="images">
+          <img src="assests/coustomer1.jpg" alt="" draggable="false"/>
+          <a href="https://www.instagram.com"
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div class="images">
+          <img src="assests/coustomer1.jpg" alt="" draggable="false"/>
+          <a href="https://www.instagram.com"
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+      </div>
     </section>
     <!-- whatsApp Channel -->
     <section id="whatsappChannel">
@@ -196,31 +249,6 @@
         daily Horoscope and Tarot Readings
       </h1>
       <a href="#">Join Channel</a>
-    </section>
-    <!-- instagram Integration -->
-    <section id="instagram">
-      <div class="container">
-        <div class="images">
-          <img src="assests/coustomer1.jpg" alt="">
-          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        <div class="images">
-          <img src="assests/coustomer1.jpg" alt="">
-          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        <div class="images">
-          <img src="assests/coustomer1.jpg" alt="">
-          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        <div class="images">
-          <img src="assests/coustomer1.jpg" alt="">
-          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        <div class="images">
-          <img src="assests/coustomer1.jpg" alt="">
-          <a href="https://www.instagram.com"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        </div>
-      </div>
     </section>
     <footer>
       <div class="container">

@@ -188,111 +188,43 @@ function showSlide(n) {
 }
 showSlide(0);
 
-// categories
-jQuery(document).ready(function ($) {
-  const $feedbackSlider = $(".feedback-slider");
+// daily readings
+async function getValues() {
+  let Response = await fetch("https://sheetdb.io/api/v1/rejri1k6yve2k");
+  let data = await Response.json();
+  console.log(data[0].Reading);
+  document.getElementById("readingContent").innerHTML = data[0].Reading;
+}
 
-  if ($feedbackSlider.length) {
-    $feedbackSlider.owlCarousel({
-      items: 1,
-      nav: true,
-      dots: true,
-      autoplay: false,
-      loop: true,
-      mouseDrag: true,
-      touchDrag: true,
-      navText: [
-        '<i class="fa fa-long-arrow-left"></i>',
-        '<i class="fa fa-long-arrow-right"></i>',
-      ],
-      responsive: {
-        // viewport >= 767px
-        767: {
-          nav: true,
-          dots: false,
-        },
-      },
-    });
+getValues();
 
-    $feedbackSlider.on("translate.owl.carousel", function () {
-      $(".feedback-slider-item h3")
-        .removeClass("animated fadeIn")
-        .css("opacity", "0");
+// form redirect
+function sendWhatsAppMessage() {
+  let url = "https://api.whatsapp.com/send?phone=+919022428111&text=";
+  let text = `Hello Neha! 😊 I'd love to book a tarot reading with you. Here are my details:
+    Contact Number: ${document.getElementById('contact').value}
+    Email Address: ${document.getElementById('email').value}
+    Type of Reading: I'm interested in a ${document.getElementById('tarotType').value} reading.
+    Description: ${document.getElementById('tarotDescription').value}.
+    Let me know if you need anything else or if there's anything I should prepare in advance. Thanks so much, and I'm looking forward to the reading! ✨`;
+    window.open(url+text, "_blank");
+}
 
-      $(
-        ".feedback-slider-item img, .feedback-slider-thumb img, .customer-rating"
-      )
-        .removeClass("animated zoomIn")
-        .css("opacity", "0");
-    });
-
-    $feedbackSlider.on("translated.owl.carousel", function () {
-      $(".feedback-slider-item h3")
-        .addClass("animated fadeIn")
-        .css("opacity", "1");
-
-      $(
-        ".feedback-slider-item img, .feedback-slider-thumb img, .customer-rating"
-      )
-        .addClass("animated zoomIn")
-        .css("opacity", "1");
-    });
-
-    $feedbackSlider.on("changed.owl.carousel", function (property) {
-      const current = property.item.index;
-
-      const prevThumb = $(property.target)
-        .find(".owl-item")
-        .eq(current)
-        .prev()
-        .find("img")
-        .attr("src");
-
-      const nextThumb = $(property.target)
-        .find(".owl-item")
-        .eq(current)
-        .next()
-        .find("img")
-        .attr("src");
-
-      const prevRating = $(property.target)
-        .find(".owl-item")
-        .eq(current)
-        .prev()
-        .find("span")
-        .attr("data-rating");
-
-      const nextRating = $(property.target)
-        .find(".owl-item")
-        .eq(current)
-        .next()
-        .find("span")
-        .attr("data-rating");
-
-      $(".thumb-prev").find("img").attr("src", prevThumb);
-      $(".thumb-next").find("img").attr("src", nextThumb);
-
-      $(".thumb-prev")
-        .find("span")
-        .next()
-        .html(prevRating + '<i class="fa fa-star"></i>');
-
-      $(".thumb-next")
-        .find("span")
-        .next()
-        .html(nextRating + '<i class="fa fa-star"></i>');
-    });
-
-    $(".thumb-next").on("click", function (e) {
-      e.preventDefault();
-
-      $feedbackSlider.trigger("next.owl.carousel", [300]);
-    });
-
-    $(".thumb-prev").on("click", function (e) {
-      e.preventDefault();
-
-      $feedbackSlider.trigger("prev.owl.carousel", [300]);
-    });
+// security
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+});
+document.addEventListener('keydown', function(event) {
+  // Disable F12
+  if (event.key === "F12") {
+      event.preventDefault();
   }
-}); // end ready func
+  // Disable Ctrl+Shift+I
+  if (event.ctrlKey && event.shiftKey && event.key === "I") {
+      event.preventDefault();
+  }
+  // Disable Ctrl+U (view source)
+  if (event.ctrlKey && (event.key === "U" || event.key === "u" )) {
+      event.preventDefault();
+  }
+});
