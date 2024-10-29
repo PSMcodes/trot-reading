@@ -199,32 +199,49 @@ async function getValues() {
 getValues();
 
 // form redirect
+let form = document.getElementById("contactForm");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendWhatsAppMessage();
+});
 function sendWhatsAppMessage() {
-  let url = "https://api.whatsapp.com/send?phone=+919022428111&text=";
-  let text = `Hello Neha! 😊 I'd love to book a tarot reading with you. Here are my details:
-    Contact Number: ${document.getElementById('contact').value}
-    Email Address: ${document.getElementById('email').value}
-    Type of Reading: I'm interested in a ${document.getElementById('tarotType').value} reading.
-    Description: ${document.getElementById('tarotDescription').value}.
-    Let me know if you need anything else or if there's anything I should prepare in advance. Thanks so much, and I'm looking forward to the reading! ✨`;
-    window.open(url+text, "_blank");
+  let url = "https://api.whatsapp.com/send?phone=+919270467341&text=";
+  let text = `Hello Neha! 😊 I'd love to book a tarot reading with you. Here are my details:%0A
+    Name : ${document.getElementById("name").value}%0A
+    Contact Number: ${document.getElementById("contact").value}%0A
+    Email Address: ${document.getElementById("email").value}%0A
+    Type of Reading: I'm interested in a ${document.getElementById("tarotType").value} reading.%0A
+    Description: ${document.getElementById("tarotDescription").value}.%0A
+    Let me know if you need anything else or if there's anything I should prepare in advance. Thanks so much, and I'm looking forward to the reading! ✨   
+    `;
+  window.open(url + text, "_blank");
 }
 
 // security
-document.addEventListener('contextmenu', function(event) {
+document.addEventListener("contextmenu", function (event) {
   event.preventDefault();
 });
-document.addEventListener('keydown', function(event) {
+document.addEventListener("keydown", function (event) {
   // Disable F12
   if (event.key === "F12") {
-      event.preventDefault();
-  }
+    event.preventDefault();
+  } 
   // Disable Ctrl+Shift+I
   if (event.ctrlKey && event.shiftKey && event.key === "I") {
-      event.preventDefault();
+    event.preventDefault();
   }
   // Disable Ctrl+U (view source)
-  if (event.ctrlKey && (event.key === "U" || event.key === "u" )) {
-      event.preventDefault();
+  if (event.ctrlKey && (event.key === "U" || event.key === "u")) {
+    event.preventDefault();
   }
 });
+
+// modal
+function openModal() {
+  console.log("yes");
+  document.getElementById("modalOverlay").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modalOverlay").style.display = "none";
+}

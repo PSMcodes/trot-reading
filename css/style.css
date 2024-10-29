@@ -114,7 +114,7 @@ nav ul li a {
   font-size: 2em;
 }
 
-nav i {
+nav i.fa-bars {
   color: var(--color6);
   font-size: 1.5em;
   display: none !important;
@@ -316,18 +316,20 @@ section.banner .banner-heading {
   font-size: 0.8em;
   margin: 15px 0;
 }
-#booking .container a {
+#booking .container button {
   text-decoration: none;
   display: inline-block;
   transition: 0.3s;
   width: fit-content;
   padding: 10px;
-  background: var(--color3);
-  color: var(--color6);
+  border: 2px solid var(--color3);
+  color: var(--color1);
+  background: none;
 }
 
-#booking .container a:hover {
+#booking .container button:hover {
   background: var(--color1);
+  color: var(--color6);
 }
 
 #vid {
@@ -571,6 +573,7 @@ div.item button {
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
+  position: relative;
 }
 #instagram .container{
   width: 80%;
@@ -590,7 +593,18 @@ div.item button {
   object-fit: cover;
   height: 100%;
 }
-
+#instagram .mainLink{
+  background: black;
+  border-radius: 4px;
+  padding: 5px;
+  text-decoration:none;
+  color:var(--color5);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-40%,-40%);
+  z-index: 2;
+}
 #instagram .container .images a {
   width: 100%;
   height: 100%;
@@ -656,4 +670,104 @@ footer .social-icons i {
   width: 30px;
   height: 30px;
   color: var(--color6);
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+
+/* Modal Box */
+.modal {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: fadeIn 0.3s;
+}
+
+/* Close Button */
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #4b0082;
+}
+
+input, textarea, select {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  font-size: 15px;
+  font-family: 'Modern Antiqua', sans-serif;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Styled Select Menu */
+select {
+  background-color: #ffffff;
+  color: #4b0082;
+  font-weight: bold;
+}
+
+select option:nth-child(1) { color: #4b0082; }
+select option:nth-child(2) { color: #ffd700; }
+select option:nth-child(3) { color: #5d3fd3; }
+select option:nth-child(4) { color: #b0c4de; }
+select option:nth-child(5) { color: #e6e6fa; }
+select option:nth-child(6) { color: #ffffff; background-color: #4b0082; }
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 20px;
+  padding: 12px 0;
+  background-color: #4b0082;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #5d3fd3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
 }
