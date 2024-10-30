@@ -115,6 +115,36 @@ particlesJS("particle", {
   },
 });
 
+// swipper
+const swiper = new Swiper('.slider-wrapper', {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+  // Pagination bullets
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  // Responsive breakpoints
+  breakpoints: {
+    0: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+
 // lodaer
 document.onreadystatechange = function () {
   document.getElementById("loader").style.display = "none"; // Hide loader
@@ -172,7 +202,7 @@ document.getElementById("vid").addEventListener("mouseleave", () => {
   document.getElementById("play-btn").style.opacity = 0.5;
 });
 
-// SlideShow
+// SlideShow tesimonial
 let slides = document.querySelectorAll(".slides");
 let firstSlide = 0;
 let lastSlide = slides.length - 1;
@@ -223,9 +253,9 @@ document.addEventListener("contextmenu", function (event) {
 });
 document.addEventListener("keydown", function (event) {
   // Disable F12
-  if (event.key === "F12") {
-    event.preventDefault();
-  } 
+  // if (event.key === "F12") {
+  //   event.preventDefault();
+  // } 
   // Disable Ctrl+Shift+I
   if (event.ctrlKey && event.shiftKey && event.key === "I") {
     event.preventDefault();

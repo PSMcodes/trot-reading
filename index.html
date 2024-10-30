@@ -28,6 +28,7 @@
     href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div id="loader" class="loader">
@@ -133,19 +134,19 @@
         <div class="slides">
           <img src="assests/coustomer.jpg" alt="" draggable="false" />
           <span class="caption"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+            >An incredible experience! Neha’s tarot reading gave me clarity and confidence in areas I was struggling with. Her insights were spot on and truly helped me understand my situation better..</span
           >
         </div>
         <div class="slides">
           <img src="assests/coustomer1.jpg" alt="" draggable="false" />
           <span class="caption"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+            >Neha’s readings are always so accurate and comforting. She has a way of making me feel understood, and her guidance has positively impacted my decisions and mindset</span
           >
         </div>
         <div class="slides">
           <img src="assests/coustomer2.jpg" alt="" draggable="false" />
           <span class="caption"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+            >I was amazed at how well Neha connected with me. Her reading was insightful, compassionate, and gave me a fresh perspective on challenges I’ve been facing. I can’t recommend her enough!</span
           >
         </div>
         <div class="btn-group">
@@ -160,56 +161,46 @@
     </section>
     <!-- categories -->
     <section id="categories">
-      <input type="radio" class="radiobtn" name="position" />
-      <input type="radio" class="radiobtn" name="position" checked />
-      <input type="radio" class="radiobtn" name="position" />
-      <main id="carousel">
-        <div class="item">
-          <img
-            src="assests/categories/category1.jpg"
-            alt=""
-            draggable="false"
-          />
-          <div class="content">
-            <h3>Love & Relationship Tarot</h3>
-            <span
-              >Find clarity and insight into your love life with our Love &
-              Relationship Tarot readings.
-            </span>
+      <div class="container swiper">
+        <div class="slider-wrapper">
+          <div class="card-list swiper-wrapper">
+            <div class="card-item swiper-slide">
+              <img src="./assests/categories/category1.jpg" alt="User Image" class="user-image">
+              <h2 class="user-name">Career Tarot</h2>
+              <p class="user-profession">Find direction and clarity for your career path with our Career Tarot readings.</p>
+              <button class="message-button" onclick="openModal()">Learn More</button>
+            </div>
+            <div class="card-item swiper-slide">
+              <img src="./assests/categories/category2.jpg" alt="User Image" class="user-image">
+              <h2 class="user-name">Love Tarot</h2>
+              <p class="user-profession">Find clarity and insight into your love life with our Love & Relationship Tarot readings.</p>
+              <button class="message-button" onclick="openModal()">Learn More</button>
+            </div>
+            <div class="card-item swiper-slide">
+              <img src="./assests/categories/category3.png" alt="User Image" class="user-image">
+              <h2 class="user-name">Business Tarot</h2>
+              <p class="user-profession">Empower your career or business path with our insightful Tarot readings.</p>
+              <button class="message-button" onclick="openModal()">Learn More</button>
+            </div>
+            <div class="card-item swiper-slide">
+              <img src="./assests/categories/category4.jpg" alt="User Image" class="user-image">
+              <h2 class="user-name">Health Tarot</h2>
+              <p class="user-profession">
+                Discover guidance for well-being and balance with our Health Tarot readings.</p>
+              <button class="message-button" onclick="openModal()">Learn More</button>
+            </div>
+            <div class="card-item swiper-slide">
+              <img src="./assests/categories/category4.jpg" alt="User Image" class="user-image">
+              <h2 class="user-name">Wealth Tarot</h2>
+              <p class="user-profession">Unlock insights for financial growth and abundance with our Wealth Tarot readings.</p>
+              <button class="message-button" onclick="openModal()">Learn More</button>
+            </div>
           </div>
-          <button onclick="openModal()">Learn More</button>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
         </div>
-        <div class="item">
-          <img
-            src="assests/categories/category2.jpg"
-            alt=""
-            draggable="false"
-          />
-          <div class="content">
-            <h3>Career / Business Tarot</h3>
-            <span
-              >Empower your career or business path with our insightful Tarot
-              readings.
-            </span>
-          </div>
-          <button onclick="openModal()">Learn More</button>
-        </div>
-        <div class="item">
-          <img
-            src="assests/categories/category3.png"
-            alt=""
-            draggable="false"
-          />
-          <div class="content">
-            <h3>Health Tarot</h3>
-            <span
-              >Discover guidance for well-being and balance with our Health
-              Tarot readings.
-            </span>
-          </div>
-          <button onclick="openModal()">Learn More</button>
-        </div>
-      </main>
+      </div>
     </section>
     <!-- about Section -->
     <section id="about">
@@ -316,7 +307,7 @@
             placeholder="Write a brief description"
           ></textarea>
 
-          <label for="tarotType">Choose a Color</label>
+          <label for="tarotType">Type of Reading</label>
           <select id="tarotType">
             <option value="Love Tarot">Love Tarot</option>
             <option value="Business Tarot">Business Tarot</option>

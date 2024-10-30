@@ -20,75 +20,80 @@
   li {
     margin: 10px 0;
   }
-  section.banner{
+  section.banner {
     align-items: center;
   }
-  .bgText{
+  .bgText {
     align-self: center;
     font-size: 5em !important;
   }
-  section.banner img.bannerImg{
+  section.banner img.bannerImg {
     align-self: end;
     width: 100%;
   }
-  section.banner .banner-heading{
+  section.banner .banner-heading {
     font-size: 2.5em;
   }
   #about {
     height: auto;
   }
 
-  #about .container{
+  #about .container {
     flex-direction: column;
     width: 100%;
   }
-  #about .about-content .heading{
+  #about .about-content .heading {
     font-size: 2em;
   }
   #about .about-content {
     width: 100%;
   }
-  #readings{
+  #readings {
     height: auto;
     background-position: center right;
   }
-  #readings #readingContent{
+  #readings #readingContent {
     width: 100%;
   }
 
-  #booking{
+  #booking {
     flex-direction: column;
   }
-  #booking img{
+  #booking img {
     width: 100%;
   }
-  #booking .container{
+  #booking .container {
     width: 90%;
-  } 
+  }
 
-  #vid{
+  #vid {
     height: auto;
   }
-  #vid video{
+  #vid video {
     width: 100%;
   }
 
-  #whatsappChannel{
+  #whatsappChannel {
     flex-direction: column;
   }
-  
-  #whatsappChannel h1{
+
+  #whatsappChannel h1 {
     text-align: center;
     padding: 20px;
   }
-  #instagram{
+  #instagram {
     height: auto;
     padding: 10px;
   }
-  #instagram .container{
-    grid-template-columns: repeat(2,1fr);
+  #instagram .container {
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
   }
 
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
 }
-
