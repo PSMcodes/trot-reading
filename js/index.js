@@ -253,9 +253,9 @@ document.addEventListener("contextmenu", function (event) {
 });
 document.addEventListener("keydown", function (event) {
   // Disable F12
-  // if (event.key === "F12") {
-  //   event.preventDefault();
-  // } 
+  if (event.key === "F12") {
+    event.preventDefault();
+  } 
   // Disable Ctrl+Shift+I
   if (event.ctrlKey && event.shiftKey && event.key === "I") {
     event.preventDefault();

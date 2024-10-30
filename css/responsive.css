@@ -29,7 +29,7 @@
   }
   section.banner img.bannerImg {
     align-self: end;
-    width: 100%;
+    width: 80%;
   }
   section.banner .banner-heading {
     font-size: 2.5em;
@@ -91,9 +91,13 @@
   }
 
   .slider-wrapper {
-    margin: 0 10px 40px;
+    width: 80%;
+  }
+
+  .card-list .card-item{
+    padding: 10px 0;
   }
   .slider-wrapper .swiper-slide-button {
-    display: none;
+    display: block;
   }
 }

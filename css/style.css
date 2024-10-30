@@ -147,6 +147,7 @@ section.banner .bgText {
 }
 section.banner img {
   z-index: 2;
+  filter: drop-shadow(5px 5px 5px black);
 }
 
 section.banner .banner-heading {
@@ -456,7 +457,7 @@ h3 {
 
 #categories {
   height: 600px;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   align-items: center;
   place-content: center;
@@ -467,11 +468,13 @@ h3 {
 .slider-wrapper {
   display: flex;
   overflow: hidden;
-  max-width:calc(100vw - 200px);
+  width:1200px;
   margin: 0 70px 55px;
 }
 .card-list{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-list .card-item {
   height: auto;
