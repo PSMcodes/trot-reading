@@ -468,7 +468,7 @@ h3 {
 .slider-wrapper {
   display: flex;
   overflow: hidden;
-  width:1200px;
+  max-width:1200px;
   margin: 0 70px 55px;
 }
 .card-list{
