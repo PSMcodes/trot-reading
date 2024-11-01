@@ -131,6 +131,7 @@ nav ul li a {
 nav i.burger {
   color: var(--color6);
   font-size: 1.5em;
+  display: none;
 }
 
 /* banner */
@@ -514,7 +515,7 @@ section.banner .banner-heading {
   align-items: center;
 }
 .card-list .card-item {
-  height: auto;
+  height: 400px;
   color: var(--color1);
   user-select: none;
   padding: 25px;
