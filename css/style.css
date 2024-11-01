@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Modern+Antiqua&display=swap");
-
+@import url("https://fonts.cdnfonts.com/css/beatrix-antiqua");
 :root {
   --color1: #4b0082;
   --color2: #ffd700;
-  --color3: #5d3fd3;
+  --color3: rgb(93, 63, 211);
   --color4: #b0c4de;
   --color5: #e6e6fa;
   --color6: #ffffff;
@@ -11,22 +11,32 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: Modern Antiqua;
+  font-family: "Beatrix Antiqua";
   /* user-select: none; */
   /* outline: 2px solid chartreuse; */
   scroll-behavior: smooth;
 }
-img{
+img {
   user-select: none;
 }
 
-
-::selection{
+::selection {
   color: var(--color5);
   background: var(--color2);
 }
-h1,h2,h3,h4,h5,h6,.heading,.banner-heading,.footerheading{
-  font-family: Cinzel;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading,
+.banner-heading,
+.footerheading,
+.logo,
+.banner-heading small,
+big {
+  font-family: "Cinzel";
 }
 body {
   background: linear-gradient(
@@ -62,8 +72,12 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loader p {
@@ -117,7 +131,7 @@ nav ul li a {
 nav i.fa-bars {
   color: var(--color6);
   font-size: 1.5em;
-  display: none !important;
+  display: none ;
 }
 
 /* banner */
@@ -138,18 +152,26 @@ section.banner {
 }
 section.banner .bgText {
   position: absolute;
+  top: 10%;
   z-index: 0;
-  font-size: 16em;
-  font-family: "Modern Antiqua";
+  font-size: 11em;
+  font-family: "Cinzel";
   font-weight: bold;
   opacity: 0.8;
   color: var(--color5);
+  word-spacing: 250px;
 }
-section.banner img {
-  z-index: 2;
+section.banner .bannerImg {
+  height: 100%;
+  z-index: 1;
   filter: drop-shadow(5px 5px 5px black);
+  scale: 1.3;
 }
-
+section.banner .divider {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
 section.banner .banner-heading {
   position: absolute;
   bottom: 10%;
@@ -208,7 +230,7 @@ section.banner .banner-heading {
 #about {
   padding: 10px;
   height: auto;
-  background: url('/assests/purplesky.jpg');
+  background: url("/assests/purplesky.jpg");
   background-position: center;
   display: flex;
   justify-content: center;
@@ -217,7 +239,6 @@ section.banner .banner-heading {
 }
 .heading {
   padding: 20px;
-  font-family: Modern Antiqua;
   text-align: center;
   font-size: 3em;
   color: var(--color2);
@@ -249,7 +270,7 @@ section.banner .banner-heading {
 #about .about-content .heading {
   color: var(--color2);
   font-weight: bold;
-  font-family: "Mordern Antiqua";
+  font-family: "Beatrix antiqua";
   font-size: 3em;
   margin: 10px 0;
   text-align: center;
@@ -265,7 +286,9 @@ section.banner .banner-heading {
 
 #readings {
   padding: 2em;
-  background: url(/assests/poster2.jpg);
+  background: linear-gradient(45deg, rgba(93, 63, 211, 0.5), rgba(93, 63, 211, 0.5)),url(/assests/poster2.jpg);
+  background-size: contain;
+  background-position: center;
   height: 500px;
   background-size: cover;
   color: var(--color5);
@@ -279,19 +302,26 @@ section.banner .banner-heading {
   height: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  flex-direction: column;
+  width: 60%;
+  margin: auto auto ;
 }
 #readings #readingContent {
-  width: 60%;
   font-size: 2em;
+  margin: 20px 0;
 }
 
+#readings #readingHeader{
+  color: var(--color2);
+}
 #booking {
   padding: 1.5em;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #0a001e;
+  background:  linear-gradient(45deg, rgba(76, 0, 130, 0.5), rgba(76, 0, 130, 0.5)), url(/assests/IMG_7876.JPG);  ;
+  background-size: 100% ;
+  background-position: center;
 }
 
 #booking img {
@@ -309,7 +339,6 @@ section.banner .banner-heading {
 }
 
 #booking .container h1 {
-  font-family: "Mordern Antiqua";
   margin: 15px 0;
 }
 
@@ -363,32 +392,32 @@ section.banner .banner-heading {
 #testimonial {
   padding: 10px;
   height: 500px;
-  background: var(--color1);
+  background: linear-gradient(45deg, rgba(76, 0, 130, 0.5), rgba(76, 0, 130, 0.5)),url(/assests/IMG_7875.WEBP);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
-
-#testimonial h1,
-h3 {
-  font-family: "Mordern Antiqua";
+#testimonial h3 {
+  color: var(--color4);
+}
+#testimonial h1 {
   font-weight: bold;
-  color: var(--color2);
-  font-size: 1.5em;
+  color: var(--color4);
+  font-size: 2em;
 }
 
 #testimonial .slider {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60%;
+  /* height: 60%; */
   /* background: grey; */
 }
 
 #testimonial .slides {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: none;
 }
 
@@ -408,10 +437,19 @@ h3 {
 
 #testimonial .slides .caption {
   width: 50%;
-  color: var(--color6);
+  color: var(--color5);
   text-align: center;
+  margin: 30px;
 }
 
+#testimonial .slides .personName {
+  color: var(--color5);
+  padding: 10px;
+}
+#testimonial .fa-star {
+  color: var(--color2);
+  padding: 10px;
+}
 #testimonial .btn-group {
   display: flex;
   justify-content: center;
@@ -468,10 +506,10 @@ h3 {
 .slider-wrapper {
   display: flex;
   overflow: hidden;
-  max-width:1200px;
+  width: 90%;
   margin: 0 70px 55px;
 }
-.card-list{
+.card-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -480,7 +518,7 @@ h3 {
   height: auto;
   color: var(--color1);
   user-select: none;
-  padding:25px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -540,7 +578,7 @@ h3 {
 /* instagram */
 
 #instagram {
-  background: var(--color3);
+  background: linear-gradient(45deg, rgba(76, 0, 130, 0.5), rgba(76, 0, 130, 0.5)),url(/assests/IMG_7874.JPG);
   background-position: left bottom;
   height: 300px;
   display: grid;
@@ -548,10 +586,10 @@ h3 {
   place-items: center;
   position: relative;
 }
-#instagram .container{
+#instagram .container {
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   transition: 0.5s;
 }
@@ -561,21 +599,21 @@ h3 {
   width: 100%;
 }
 
-#instagram .container .images img{
+#instagram .container .images img {
   width: 100%;
   object-fit: cover;
   height: 100%;
 }
-#instagram .mainLink{
+#instagram .mainLink {
   background: black;
   border-radius: 4px;
   padding: 5px;
-  text-decoration:none;
-  color:var(--color5);
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-40%,-40%);
+  text-decoration: none;
+  color: var(--color5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -40%);
   z-index: 2;
 }
 #instagram .container .images a {
@@ -594,13 +632,13 @@ h3 {
   transition: 0.5s;
 }
 
-#instagram .container :hover a{
+#instagram .container :hover a {
   opacity: 1;
 }
 /* footer */
-footer{
+footer {
   height: 300px;
-  background: linear-gradient(to bottom ,var(--color1),var(--color3));
+  background: linear-gradient(to bottom, var(--color1), var(--color3));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -615,9 +653,7 @@ footer .container {
   color: #fff;
 }
 
-
 footer .footerheading {
-  font-family: Modern Antiqua;
   text-align: center;
   font-size: 3em;
   color: var(--color2);
@@ -694,13 +730,15 @@ label {
   color: #4b0082;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   margin-top: 8px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #cccccc;
   font-size: 15px;
-  font-family: 'Modern Antiqua', sans-serif;
+  font-family: "Modern Antiqua", sans-serif;
 }
 
 textarea {
@@ -714,8 +752,6 @@ select {
   color: #4b0082;
   font-weight: bold;
 }
-
-
 
 /* Submit Button */
 .submit-btn {
@@ -736,7 +772,12 @@ select {
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-50px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-

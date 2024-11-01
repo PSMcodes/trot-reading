@@ -219,14 +219,46 @@ function showSlide(n) {
 showSlide(0);
 
 // daily readings
-async function getValues() {
-  let Response = await fetch("https://sheetdb.io/api/v1/rejri1k6yve2k");
-  let data = await Response.json();
-  console.log(data[0].Reading);
-  document.getElementById("readingContent").innerHTML = data[0].Reading;
+let SHEET_ID = '1kyRgLhapYrETeRJBgAa7cGV28nOXtJHyj0_hNsq1vCA'
+let SHEET_TITLE = 'Sheet1'
+let SHEET_RANGE = 'A1:C32'
+
+let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
+
+function formatDate(date) {
+  let day = String(date.getDate()).padStart(2, '0'); // Add leading zero if needed
+  let month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+  let year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
 }
 
-getValues();
+let currentDate = formatDate(new Date())
+
+async function getvalues(){
+  try {
+    let Response = await fetch(FULL_URL)
+    let data = await Response.text()
+    data = JSON.parse(data.substr(47).slice(0,-2)).table.rows
+    console.log(data);  
+    data.map((ele)=>{
+      if(ele.c[0].f == currentDate){
+        console.log(ele.c[0].f);
+        let title = ele.c[1].v
+        let desc = ele.c[2].v
+        document.getElementById('readingHeader').innerHTML = title
+        document.getElementById('readingContent').innerHTML = desc
+      }
+    })
+    
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+getvalues()
+
 
 // form redirect
 let form = document.getElementById("contactForm");
