@@ -116,33 +116,9 @@ particlesJS("particle", {
 });
 
 // swipper
-const swiper = new Swiper('.slider-wrapper', {
-  loop: true,
+let swiper = new Swiper(".mySwiper", {
+  effect: "cards",
   grabCursor: true,
-  spaceBetween: 30,
-  // Pagination bullets
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    dynamicBullets: true
-  },
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  // Responsive breakpoints
-  breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    768: {
-      slidesPerView: 2
-    },
-    1024: {
-      slidesPerView: 3
-    }
-  }
 });
 
 // lodaer
@@ -219,65 +195,125 @@ function showSlide(n) {
 showSlide(0);
 
 // daily readings
-let SHEET_ID = '1kyRgLhapYrETeRJBgAa7cGV28nOXtJHyj0_hNsq1vCA'
-let SHEET_TITLE = 'Sheet1'
-let SHEET_RANGE = 'A1:C32'
+let SHEET_ID = "1kyRgLhapYrETeRJBgAa7cGV28nOXtJHyj0_hNsq1vCA";
+let SHEET_TITLE = "Sheet1";
+let SHEET_RANGE = "A1:C32";
 
-let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
+let FULL_URL =
+  "https://docs.google.com/spreadsheets/d/" +
+  SHEET_ID +
+  "/gviz/tq?sheet=" +
+  SHEET_TITLE +
+  "&range=" +
+  SHEET_RANGE;
 
 function formatDate(date) {
-  let day = String(date.getDate()).padStart(2, '0'); // Add leading zero if needed
-  let month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+  let day = String(date.getDate()).padStart(2, "0"); // Add leading zero if needed
+  let month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based
   let year = date.getFullYear();
 
   return `${day}/${month}/${year}`;
 }
 
-let currentDate = formatDate(new Date())
+let currentDate = formatDate(new Date());
 
-async function getvalues(){
+async function getvalues() {
   try {
-    let Response = await fetch(FULL_URL)
-    let data = await Response.text()
-    data = JSON.parse(data.substr(47).slice(0,-2)).table.rows
-    console.log(data);  
-    data.map((ele)=>{
-      if(ele.c[0].f == currentDate){
+    let Response = await fetch(FULL_URL);
+    let data = await Response.text();
+    data = JSON.parse(data.substr(47).slice(0, -2)).table.rows;
+    console.log(data);
+    data.map((ele) => {
+      if (ele.c[0].f == currentDate) {
         console.log(ele.c[0].f);
-        let title = ele.c[1].v
-        let desc = ele.c[2].v
-        document.getElementById('readingHeader').innerHTML = title
-        document.getElementById('readingContent').innerHTML = desc
+        let title = ele.c[1].v;
+        let desc = ele.c[2].v;
+        document.getElementById("readingHeader").innerHTML = title;
+        document.getElementById("readingContent").innerHTML = desc;
       }
-    })
-    
-    
+    });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
-getvalues()
-
+getvalues();
 
 // form redirect
-let form = document.getElementById("contactForm");
+const form = document.getElementById("contactForm");
+
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  sendWhatsAppMessage();
+    e.preventDefault(); // Prevent form from submitting
+    if (validateForm()) {
+      closeModal()
+      showThankYouModal();
+      // sendWhatsAppMessage();
+    }
 });
+function validateForm() {
+  const name = document.getElementById("name").value;
+  const contact = document.getElementById("contact").value;
+  const email = document.getElementById("email").value;
+  const tarotType = document.getElementById("tarotType").value;
+  const tarotDescription = document.getElementById("tarotDescription").value;
+  const errorMsg = document.getElementById("error-msg");
+
+  // Validate Name
+  if (!/^[A-Za-z\s]{3,}$/.test(name)) {
+      errorMsg.textContent = "Name must be at least 3 characters and contain only letters.";
+      return false;
+  }
+
+  // Validate Contact Number
+  if (!/^\d{10}$/.test(contact)) {
+      errorMsg.textContent = "Contact number must be exactly 10 digits.";
+      return false;
+  }
+
+  // Validate Email
+  if (!/^[\w\.-]+@[A-Za-z]+\.[A-Za-z]{2,}$/.test(email)) {
+      errorMsg.textContent = "Please enter a valid email address.";
+      return false;
+  }
+
+  // Validate Tarot Type and Description
+  if (tarotType.trim() === "" || tarotDescription.trim() === "") {
+      errorMsg.textContent = "Please fill in both the type of reading and description fields.";
+      return false;
+  }
+
+  // Clear error message if all validations pass
+  errorMsg.textContent = "";
+  return true;
+}
+
 function sendWhatsAppMessage() {
+  const name = document.getElementById("name").value;
+  const contact = document.getElementById("contact").value;
+  const email = document.getElementById("email").value;
+  const tarotType = document.getElementById("tarotType").value;
+  const tarotDescription = document.getElementById("tarotDescription").value;
+
   let url = "https://api.whatsapp.com/send?phone=+919270467341&text=";
   let text = `Hello Neha! 😊 I'd love to book a tarot reading with you. Here are my details:%0A
-    Name : ${document.getElementById("name").value}%0A
-    Contact Number: ${document.getElementById("contact").value}%0A
-    Email Address: ${document.getElementById("email").value}%0A
-    Type of Reading: I'm interested in a ${document.getElementById("tarotType").value} reading.%0A
-    Description: ${document.getElementById("tarotDescription").value}.%0A
-    Let me know if you need anything else or if there's anything I should prepare in advance. Thanks so much, and I'm looking forward to the reading! ✨   
-    `;
+      Name: ${name}%0A
+      Contact Number: ${contact}%0A
+      Email Address: ${email}%0A
+      Type of Reading: I'm interested in a ${tarotType} reading.%0A
+      Description: ${tarotDescription}.%0A
+      Let me know if you need anything else or if there's anything I should prepare in advance. Thanks so much, and I'm looking forward to the reading! ✨`;
+  
   window.open(url + text, "_blank");
 }
+
+function showThankYouModal() {
+  document.getElementById("thankYouModal").style.display = "flex";
+}
+
+function closeModal2() {
+  document.getElementById("thankYouModal").style.display = "none";
+}
+
 
 // security
 document.addEventListener("contextmenu", function (event) {
@@ -287,7 +323,7 @@ document.addEventListener("keydown", function (event) {
   // Disable F12
   if (event.key === "F12") {
     event.preventDefault();
-  } 
+  }
   // Disable Ctrl+Shift+I
   if (event.ctrlKey && event.shiftKey && event.key === "I") {
     event.preventDefault();
@@ -300,7 +336,6 @@ document.addEventListener("keydown", function (event) {
 
 // modal
 function openModal() {
-  console.log("yes");
   document.getElementById("modalOverlay").style.display = "flex";
 }
 

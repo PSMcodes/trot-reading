@@ -229,88 +229,50 @@
     </section>
     <!-- categories -->
     <section id="categories">
-      <div class="container swiper">
-        <div class="slider-wrapper">
-          <div class="card-list swiper-wrapper">
-            <div class="card-item swiper-slide" data-swiper-autoplay="2000">
-              <img
-                src="./assests/categories/category1.jpg"
-                alt="User Image"
-                class="user-image"
-              />
-              <h2 class="user-name">Career Tarot</h2>
-              <p class="user-profession">
-                Find direction and clarity for your career path with our Career
-                Tarot readings.
+      <h1>Categories </h1>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assests/IMG_7876.JPG" alt="">
+            <div class="caption">
+              <h3 class="title">Love Tarot</h3>
+              <p>Discover insights and guidance for your love journey.
               </p>
-              <button class="message-button" onclick="openModal()">
-                Learn More
-              </button>
             </div>
-            <div class="card-item swiper-slide" data-swiper-autoplay="2000">
-              <img
-                src="./assests/categories/category2.jpg"
-                alt="User Image"
-                class="user-image"
-              />
-              <h2 class="user-name">Love Tarot</h2>
-              <p class="user-profession">
-                Find clarity and insight into your love life with our Love &
-                Relationship Tarot readings.
-              </p>
-              <button class="message-button" onclick="openModal()">
-                Learn More
-              </button>
-            </div>
-            <div class="card-item swiper-slide" data-swiper-autoplay="2000">
-              <img
-                src="./assests/categories/category3.png"
-                alt="User Image"
-                class="user-image"
-              />
-              <h2 class="user-name">Business Tarot</h2>
-              <p class="user-profession">
-                Empower your career or business path with our insightful Tarot
-                readings.
-              </p>
-              <button class="message-button" onclick="openModal()">
-                Learn More
-              </button>
-            </div>
-            <div class="card-item swiper-slide" data-swiper-autoplay="2000">
-              <img
-                src="./assests/categories/category4.jpg"
-                alt="User Image"
-                class="user-image"
-              />
-              <h2 class="user-name">Health Tarot</h2>
-              <p class="user-profession">
-                Discover guidance for well-being and balance with our Health
-                Tarot readings.
-              </p>
-              <button class="message-button" onclick="openModal()">
-                Learn More
-              </button>
-            </div>
-            <div class="card-item swiper-slide" data-swiper-autoplay="2000">
-              <img
-                src="./assests/categories/category4.jpg"
-                alt="User Image"
-                class="user-image"
-              />
-              <h2 class="user-name">Wealth Tarot</h2>
-              <p class="user-profession">
-                Unlock insights for financial growth and abundance with our
-                Wealth Tarot readings.
-              </p>
-              <button class="message-button" onclick="openModal()">
-                Learn More
-              </button>
-            </div>
+            <button onclick="openModal()">Learn More</button>
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-slide-button swiper-button-prev"></div>
-          <div class="swiper-slide-button swiper-button-next"></div>
+          <div class="swiper-slide">
+            <img src="assests/categories/category1.jpg" alt="">
+            <div class="caption">
+              <h3 class="title">Career Tarot</h3>
+              <p>Find direction and clarity for your career path with our Career Tarot readings.</p>
+            </div>
+            <button onclick="openModal()">Learn More</button>
+          </div>
+          <div class="swiper-slide">
+            <img src="assests/categories/category2.jpg" alt="">
+            <div class="caption">
+              <h3 class="title">Business Tarot</h3>
+              <p>Gain clarity and direction for successful business decisions.</p>
+            </div>
+            <button onclick="openModal()">Learn More</button>
+          </div>
+          <div class="swiper-slide">
+            <img src="assests/categories/category3.png" alt="">
+            <div class="caption">
+              <h3 class="title">Health Tarot</h3>
+              <p>Discover guidance for well-being and balance with our Health Tarot readings.</p>
+            </div>
+            <button onclick="openModal()">Learn More</button>
+          </div>
+          <div class="swiper-slide">
+            <img src="assests/categories/category4.jpg" alt="">
+            <div class="caption">
+              <h3 class="title">Wealth Tarot</h3>
+              <p>Unlock insights for financial growth and abundance with our Wealth Tarot readings.</p>
+            </div>
+            <button onclick="openModal()">Learn More</button>
+          </div>
         </div>
       </div>
     </section>
@@ -318,7 +280,7 @@
     <section id="about">
       <h1 class="heading">About me</h1>
       <div class="container">
-        <img src="assests/about.jpg"
+        <img src="assests/IMG_7989.PNG"
         style="height: 100%;" alt="" draggable="false" />
         <div class="about-content">
           <p class="heading">Astrological <br />Consultation</p>
@@ -412,6 +374,7 @@
         <button class="close-modal-btn" onclick="closeModal()">✖</button>
         <h2>Contact Form</h2>
         <form id="contactForm">
+          <p id="error-msg" style="color: red;"></p>
           <label for="name">Name</label>
           <input type="text" id="name" placeholder="Enter your name" required />
 
@@ -451,5 +414,16 @@
         </form>
       </div>
     </div>
+
+    <!-- thankyou modal -->
+    <div id="thankYouModal" class="modal2">
+      <div class="modal-content2">
+          <span class="close-btn2" onclick="closeModal()">&times;</span>
+          <h3>Thank You!</h3>
+          <p>Your form has been submitted successfully.</p>
+          <button class="submit-btn" onclick="sendWhatsAppMessage()">WhatsApp</button>
+      </div>
+  </div>
+
   </body>
 </html>
