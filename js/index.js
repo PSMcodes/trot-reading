@@ -130,9 +130,10 @@ document.onreadystatechange = function () {
 // navbar
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
-
+  
   // Check if the page is scrolled more than 50px
   if (window.scrollY > 200) {
+    console.log('yess');
     navbar.classList.add("scrolled"); // Add new class when scrolled
   } else {
     navbar.classList.remove("scrolled"); // Remove class when at the top
@@ -192,7 +193,7 @@ function showSlide(n) {
   }
   slides[currentSlide].classList.add("active");
 }
-showSlide(0);
+// showSlide(0);
 
 // daily readings
 let SHEET_ID = "1kyRgLhapYrETeRJBgAa7cGV28nOXtJHyj0_hNsq1vCA";

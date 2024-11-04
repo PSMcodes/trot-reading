@@ -1,6 +1,23 @@
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+  html,
+  body{
+    width:100%;
+    overflow-x:hidden;
+  }
+
+}
+
 @media (max-width: 768px) {
+  nav .logo {
+    font-size: 1.5em;
+  }
   nav i.burger {
-    display: block ;
+    display: block !important;
   }
   ul.nav-links {
     display: none;
@@ -12,68 +29,70 @@
     width: 100%;
     text-align: center;
   }
-
   ul.nav-links.active {
     display: flex;
   }
-
   li {
     margin: 10px 0;
   }
   section.banner {
     align-items: center;
-    height: auto;
+    height: auto !important;
   }
   .bgText {
     align-self: center;
-    font-size: 3em !important;
-    word-spacing: 16px !important;
+    top: 5% !important;
+    font-size: 2.5em !important;
+    word-spacing: 140px !important;
+    padding: 10px;
   }
   section.banner img.bannerImg {
-    align-self: end;
-    width: 60%;
+    align-self: flex-end;
+    width: 80%;
     height: auto;
+    object-fit: contain;
   }
   section.banner .banner-heading {
-    font-size: 2.5em;
+    font-size: 2em !important;
   }
   #about {
     height: auto;
   }
-
   #about .container {
     flex-direction: column;
-    width: 100% ;
+    width: 90% !important;
   }
   #about .about-content .heading {
-    font-size: 2em;
+    font-size: 1.8em !important;
   }
   #about .about-content {
-    width: 100%;
+    width: 100% !important;
   }
   #readings {
-    height: auto;
+    height: auto !important;
     background-position: center right;
   }
-  #readings .container{
-    width: 100%;
+  #readings .container {
+    width: 100% !important;
   }
-
   #booking {
     flex-direction: column;
   }
+  #booking .container{
+    width: 90% !important;
+  }
   #booking img {
-    width: 100%;
+    width: 100% !important;
   }
   #booking .container {
     width: 90%;
   }
 
-  #testimonial{
+  #testimonial {
     height: auto;
     text-align: center;
   }
-  #testimonial .slides .caption{
+  #testimonial .slides .caption {
     margin: 20px;
   }
   #vid {
@@ -82,24 +101,21 @@
   #vid video {
     width: 100%;
   }
-
   #whatsappChannel {
     flex-direction: column;
   }
-
   #whatsappChannel h1 {
     text-align: center;
     padding: 20px;
   }
   #instagram {
-    height: auto;
-    padding: 10px;
+    height: auto !important;
+    padding: 10px !important;
   }
   #instagram .container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     place-items: center;
   }
-
   .slider-wrapper {
     margin: 0 10px 40px;
     max-width: calc(100vw - 100px);
@@ -108,3 +124,109 @@
     display: none;
   }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav .logo {
+    font-size: 1.8em;
+  }
+  nav i.burger {
+    display: block !important;
+  }
+  ul.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(51, 51, 51, 0.9);
+    width: 100%;
+    text-align: center;
+  }
+  ul.nav-links.active {
+    display: flex;
+  }
+  li {
+    margin: 12px 0;
+  }
+  section.banner {
+    align-items: center;
+    height: auto !important;
+  }
+  .bgText {
+    align-self: center;
+    font-size: 5em !important;
+    word-spacing: 300px !important;
+    top: 5% !important;
+  }
+  section.banner img.bannerImg {
+    align-self: end;
+    width: 70%;
+    height: auto !important;
+  }
+  section.banner .banner-heading {
+    font-size: 2.5em;
+  }
+  #about {
+    height: auto !important;
+  }
+  #about .container {
+    flex-direction: column;
+    width: 90%;
+  }
+  #about .about-content .heading {
+    font-size: 2.2em;
+  }
+  #about .about-content {
+    width: 100%;
+  }
+  #readings {
+    height: auto;
+    background-position: center right;
+  }
+  #readings .container {
+    width: 90%;
+  }
+  #booking {
+    flex-direction: column;
+  }
+  #booking img {
+    width: 100% !important;
+  }
+  #booking .container {
+    width: 85% !important;
+  }
+  #testimonial {
+    height: auto;
+    text-align: center;
+  }
+  #testimonial .slides .caption {
+    margin: 24px;
+  }
+  #vid {
+    height: auto;
+  }
+  #vid video {
+    width: 100%;
+  }
+  #whatsappChannel {
+    flex-direction: column;
+  }
+  #whatsappChannel h1 {
+    text-align: center;
+    padding: 20px;
+  }
+  #instagram {
+    height: auto !important;
+    padding: 15px;
+  }
+  #instagram .container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    place-items: center;
+  }
+  .slider-wrapper {
+    margin: 0 10px 40px;
+    max-width: calc(100vw - 80px);
+  }
+  .slider-wrapper .swiper-slide-button {
+    display: block;
+  }
+} 

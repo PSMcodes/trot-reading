@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neha Jella | Tarot reader</title>
     <!-- css -->
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- particleJS -->
     <script defer src="js/particle.js"></script>
@@ -165,7 +165,7 @@
       <video src="./assests/video.mp4" controls loop id="video"></video>
     </section>
     <!-- testimonial -->
-    <section id="testimonial">
+    <!-- <section id="testimonial">
       <h3>Testimonials</h3>
       <h1>What Our Customer Says</h1>
       <div class="slider">
@@ -226,7 +226,7 @@
           </button>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- categories -->
     <section id="categories">
       <h1>Categories </h1>
@@ -410,6 +410,9 @@
             <option value="All types of Tarot">All Tarot</option>
           </select>
 
+          <label for="meeting">Schedule Appointment </label>
+          <input type="datetime-local" name="meeting" id="meeting" >
+
           <button type="submit" class="submit-btn">Submit</button>
         </form>
       </div>
@@ -418,7 +421,7 @@
     <!-- thankyou modal -->
     <div id="thankYouModal" class="modal2">
       <div class="modal-content2">
-          <span class="close-btn2" onclick="closeModal()">&times;</span>
+          <span class="close-btn2" onclick="closeModal2()">✖</span>
           <h3>Thank You!</h3>
           <p>Your form has been submitted successfully.</p>
           <button class="submit-btn" onclick="sendWhatsAppMessage()">WhatsApp</button>
