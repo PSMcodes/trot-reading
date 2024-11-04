@@ -768,7 +768,7 @@ select {
   border-radius: 5px;
   border: 1px solid #cccccc;
   font-size: 15px;
-  font-family: "Beatrix Antiqua", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 textarea {
