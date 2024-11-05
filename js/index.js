@@ -130,10 +130,9 @@ document.onreadystatechange = function () {
 // navbar
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
-  
+
   // Check if the page is scrolled more than 50px
   if (window.scrollY > 200) {
-    console.log('yess');
     navbar.classList.add("scrolled"); // Add new class when scrolled
   } else {
     navbar.classList.remove("scrolled"); // Remove class when at the top
@@ -223,10 +222,8 @@ async function getvalues() {
     let Response = await fetch(FULL_URL);
     let data = await Response.text();
     data = JSON.parse(data.substr(47).slice(0, -2)).table.rows;
-    console.log(data);
     data.map((ele) => {
       if (ele.c[0].f == currentDate) {
-        console.log(ele.c[0].f);
         let title = ele.c[1].v;
         let desc = ele.c[2].v;
         document.getElementById("readingHeader").innerHTML = title;
@@ -244,13 +241,38 @@ getvalues();
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent form from submitting
-    if (validateForm()) {
-      closeModal()
-      showThankYouModal();
-      // sendWhatsAppMessage();
-    }
+  e.preventDefault(); // Prevent form from submitting
+  if (validateForm()) {
+    closeModal();
+    showThankYouModal();
+    saveToDb();
+  }
 });
+
+function saveToDb() {
+  obj = {
+    Id:"INCREMENT",
+    Name: document.getElementById("name").value,
+    Contact: document.getElementById("contact").value,
+    Email: document.getElementById("email").value,
+    TypeofReading: document.getElementById("tarotType").value,
+    Description: document.getElementById("tarotDescription").value,
+    MeetingTime:document.getElementById('meeting').value
+  };
+  fetch("https://sheetdb.io/api/v1/lvnh6hc1oogvx", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      data: obj,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => console .log(data));
+}
+
 function validateForm() {
   const name = document.getElementById("name").value;
   const contact = document.getElementById("contact").value;
@@ -261,26 +283,28 @@ function validateForm() {
 
   // Validate Name
   if (!/^[A-Za-z\s]{3,}$/.test(name)) {
-      errorMsg.textContent = "Name must be at least 3 characters and contain only letters.";
-      return false;
+    errorMsg.textContent =
+      "Name must be at least 3 characters and contain only letters.";
+    return false;
   }
 
   // Validate Contact Number
   if (!/^\d{10}$/.test(contact)) {
-      errorMsg.textContent = "Contact number must be exactly 10 digits.";
-      return false;
+    errorMsg.textContent = "Contact number must be exactly 10 digits.";
+    return false;
   }
 
   // Validate Email
   if (!/^[\w\.-]+@[A-Za-z]+\.[A-Za-z]{2,}$/.test(email)) {
-      errorMsg.textContent = "Please enter a valid email address.";
-      return false;
+    errorMsg.textContent = "Please enter a valid email address.";
+    return false;
   }
 
   // Validate Tarot Type and Description
   if (tarotType.trim() === "" || tarotDescription.trim() === "") {
-      errorMsg.textContent = "Please fill in both the type of reading and description fields.";
-      return false;
+    errorMsg.textContent =
+      "Please fill in both the type of reading and description fields.";
+    return false;
   }
 
   // Clear error message if all validations pass
@@ -294,6 +318,7 @@ function sendWhatsAppMessage() {
   const email = document.getElementById("email").value;
   const tarotType = document.getElementById("tarotType").value;
   const tarotDescription = document.getElementById("tarotDescription").value;
+  const meeting = document.getElementById("meeting").value;
 
   let url = "https://api.whatsapp.com/send?phone=+919270467341&text=";
   let text = `Hello Neha! 😊 I'd love to book a tarot reading with you. Here are my details:%0A
@@ -302,8 +327,9 @@ function sendWhatsAppMessage() {
       Email Address: ${email}%0A
       Type of Reading: I'm interested in a ${tarotType} reading.%0A
       Description: ${tarotDescription}.%0A
+      Date / Time : ${meeting}
       Let me know if you need anything else or if there's anything I should prepare in advance. Thanks so much, and I'm looking forward to the reading! ✨`;
-  
+
   window.open(url + text, "_blank");
 }
 
@@ -314,7 +340,6 @@ function showThankYouModal() {
 function closeModal2() {
   document.getElementById("thankYouModal").style.display = "none";
 }
-
 
 // security
 document.addEventListener("contextmenu", function (event) {
