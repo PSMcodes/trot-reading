@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CMJW5HT15X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CMJW5HT15X");
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TSW22CS9");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neha Jella | Tarot reader</title>
@@ -13,7 +43,7 @@
     <script defer src="js/index.js"></script>
 
     <!-- meta tags -->
-    <meta property="og:title" content="Neha Jella | Tarot reader" />
+    <meta property="og:title" content="Neha Jella | Tarot card reader" />
     <meta
       name="description"
       content="Neha Jella - Welcome to Fortune Wand Neha, where intuition meets insight! I am Neha Jella, a passionate and experienced tarot reader, dedicated to helping you navigate life’s uncertainties with clarity and wisdom."
@@ -45,8 +75,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <meta
+      name="google-site-verification"
+      content="6dL-f7pRJcBMwHbg7COZNyVvyeGj7OxJnvBjJC7avGo"
+    />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TSW22CS9"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="loader" class="loader">
       <div class="zodiac-wheel"></div>
       <p>Aligning the Stars...</p>
@@ -102,33 +148,33 @@
       <div class="track">
         <div class="content">
           <span class="star">💠</span>
-          Love & Relationship Tarot
+          Love & Relationship Tarot Reading
           <span class="star">💠</span>
-          Spiritual Readings
-          <span class="star">💠</span>
-          Career Tarot
-          <span class="star">💠</span>
-          Business Tarot
-          <span class="star">💠</span>
-          Daily Tarot Reading
-          <span class="star">💠</span>
-          Health Tarot
-          <span class="star">💠</span>
-          Wealth Tarot
-          <span class="star">💠</span>
-          Love & Relationship Tarot
-          <span class="star">💠</span>
-          Spiritual Readings
+          Spiritual Tarot Readings
           <span class="star">💠</span>
           Career Tarot
           <span class="star">💠</span>
+          Business Tarot Reading
+          <span class="star">💠</span>
+          General Tarot Reading
+          <span class="star">💠</span>
+          Health Tarot Reading
+          <span class="star">💠</span>
+          Wealth Tarot Reading
+          <span class="star">💠</span>
+          Horoscope Tarot Reading
+          <span class="star">💠</span>
+          Spiritual Tarot Readings
+          <span class="star">💠</span>
+          Career Tarot Reading
+          <span class="star">💠</span>
           Business Tarot
           <span class="star">💠</span>
-          Daily Tarot Reading
+          Reiki Healing
           <span class="star">💠</span>
-          Health Tarot
+          Health Tarot Reading
           <span class="star">💠</span>
-          Wealth Tarot
+          Wealth Tarot Reading
         </div>
       </div>
     </div>
@@ -156,6 +202,9 @@
           Discover fresh perspectives, find clarity, and navigate challenges
           with ease as the cards reveal what’s in store for you today.
         </div>
+        <button class="njcustombutton" onclick="openModal()">
+          Book your Customized Readings
+        </button>
       </div>
     </section>
 
@@ -165,57 +214,11 @@
       <video src="./assests/video.mp4" controls loop id="video"></video>
     </section>
     <!-- testimonial -->
-    <!-- <section id="testimonial">
+    <section id="testimonial">
       <h3>Testimonials</h3>
       <h1>What Our Customer Says</h1>
       <div class="slider">
-        <div class="slides">
-          <img src="assests/coustomer.jpg" alt="" draggable="false" />
-          <span class="caption">
-            An incredible experience! Neha’s tarot reading gave me clarity and
-            confidence in areas I was struggling with. Her insights were spot on
-            and truly helped me understand my situation better..</span
-          >
-          <p class="personName">John Doe</p>
-          <p class="stars">
-            <i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i>
-          </p>
-        </div>
-        <div class="slides">
-          <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <span class="caption">
-            Neha’s readings are always so accurate and comforting. She has a way
-            of making me feel understood, and her guidance has positively
-            impacted my decisions and mindset</span
-          >
-          <p class="personName">John Doe</p>
-          <p class="stars">
-            <i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i>
-          </p>
-        </div>
-        <div class="slides">
-          <img src="assests/coustomer2.jpg" alt="" draggable="false" />
-          <span class="caption">
-            I was amazed at how well Neha connected with me. Her reading was
-            insightful, compassionate, and gave me a fresh perspective on
-            challenges I’ve been facing. I can’t recommend her enough!</span
-          >
-          <p class="personName">John Doe</p>
-          <p class="stars">
-            <i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i
-            ><i class="fa fa-star" aria-hidden="true"></i>
-          </p>
+        <div class="slides-container">
         </div>
         <div class="btn-group">
           <button class="slider-btn prevbtn" onclick="showSlide(-1)">
@@ -226,53 +229,93 @@
           </button>
         </div>
       </div>
-    </section> -->
+    </section> 
     <!-- categories -->
     <section id="categories">
-      <h1>Categories </h1>
+      <h1>Categories</h1>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="assests/IMG_7876.JPG" alt="">
+            <img src="assests/IMG_7876.JPG" alt="" />
             <div class="caption">
               <h3 class="title">Love Tarot</h3>
-              <p>Discover insights and guidance for your love journey.
+              <p>Discover insights and guidance for your love journey.</p>
+            </div>
+            <button onclick="openModal()">Learn More</button>
+          </div>
+          <div class="swiper-slide">
+            <img src="assests/categories/category1.jpg" alt="" />
+            <div class="caption">
+              <h3 class="title">Career Tarot</h3>
+              <p>
+                Find direction and clarity for your career path with our Career
+                Tarot readings.
               </p>
             </div>
             <button onclick="openModal()">Learn More</button>
           </div>
           <div class="swiper-slide">
-            <img src="assests/categories/category1.jpg" alt="">
-            <div class="caption">
-              <h3 class="title">Career Tarot</h3>
-              <p>Find direction and clarity for your career path with our Career Tarot readings.</p>
-            </div>
-            <button onclick="openModal()">Learn More</button>
-          </div>
-          <div class="swiper-slide">
-            <img src="assests/categories/category2.jpg" alt="">
+            <img src="assests/categories/category2.jpg" alt="" />
             <div class="caption">
               <h3 class="title">Business Tarot</h3>
-              <p>Gain clarity and direction for successful business decisions.</p>
+              <p>
+                Gain clarity and direction for successful business decisions.
+              </p>
             </div>
             <button onclick="openModal()">Learn More</button>
           </div>
           <div class="swiper-slide">
-            <img src="assests/categories/category3.png" alt="">
+            <img src="assests/categories/category3.png" alt="" />
             <div class="caption">
               <h3 class="title">Health Tarot</h3>
-              <p>Discover guidance for well-being and balance with our Health Tarot readings.</p>
+              <p>
+                Discover guidance for well-being and balance with our Health
+                Tarot readings.
+              </p>
             </div>
             <button onclick="openModal()">Learn More</button>
           </div>
           <div class="swiper-slide">
-            <img src="assests/categories/category4.jpg" alt="">
+            <img src="assests/categories/category4.jpg" alt="" />
             <div class="caption">
               <h3 class="title">Wealth Tarot</h3>
-              <p>Unlock insights for financial growth and abundance with our Wealth Tarot readings.</p>
+              <p>
+                Unlock insights for financial growth and abundance with our
+                Wealth Tarot readings.
+              </p>
             </div>
             <button onclick="openModal()">Learn More</button>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- pricing -->
+    <section id="pricing">
+      <h1>Pricing</h1>
+      <div class="container">
+        <div class="card card1">
+          <div class="card-header">
+            <img src="assests/card.png" alt="">
+            <div class="card-title">A Query</div>
+          </div>
+          <div class="pricingValue">₹ 222 / 1 Question</div>
+          <button onclick="openModal()">Choose Date</button>
+        </div>
+        <div class="card card2">
+          <div class="card-header">
+            <img src="assests/card.png" alt="">
+            <div class="card-title">Some Questions</div>
+          </div>
+          <div class="pricingValue">₹ 555  / 3 Question</div>
+          <button onclick="openModal()">Choose Date</button>
+        </div>
+        <div class="card card3">
+          <div class="card-header">
+            <img src="assests/card.png" alt="">
+            <div class="card-title"> Serious Session</div>
+          </div>
+          <div class="pricingValue">₹ 1111 / 1 hour session</div>
+          <button onclick="openModal()">Choose Date</button>
         </div>
       </div>
     </section>
@@ -280,60 +323,74 @@
     <section id="about">
       <h1 class="heading">About me</h1>
       <div class="container">
-        <img src="assests/IMG_7989.PNG"
-        style="height: 100%;" alt="" draggable="false" />
+        <img
+          src="assests/IMG_7989.PNG"
+          style="height: 80%"
+          alt=""
+          draggable="false"
+        />
         <div class="about-content">
-          <p class="heading">Astrological <br />Consultation</p>
+          <p class="heading">Know me before<br />Consultation</p>
           <p class="content-text">
             Welcome to Fortune Wand Neha, where intuition meets insight! I am
             Neha Jella, a passionate and experienced tarot reader, dedicated to
             helping you navigate life’s uncertainties with clarity and wisdom.
             Tarot is a powerful tool for self-reflection, guidance, and personal
             growth, and my goal is to empower you with the answers and direction
-            you seek
+            you seek!
           </p>
+          <br /><br />
+          <button onclick="openModal()" class="njcustombutton">
+            Book a Appointment
+          </button>
         </div>
       </div>
     </section>
     <!-- instagram Integration -->
     <section id="instagram">
       <div class="container">
-        <a href="www.instagram.com/fortunewandneha/" class="mainLink"
+        <a href="https://www.instagram.com/fortunewandneha/" class="mainLink"
           ><i class="fa-brands fa-instagram"></i> Instagram</a
         >
         <div class="images">
           <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <a href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          <a
+            href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div class="images">
+          <img src="assests/posts/post2.jpg" alt="" draggable="false" />
+          <a
+            href="https://www.instagram.com/p/DCRzthWt5XC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             ><i class="fa-brands fa-instagram" aria-hidden="true"></i
           ></a>
         </div>
         <div class="images">
           <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <a href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          <a
+            href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div class="images">
+          <img src="assests/posts/post2.jpg" alt="" draggable="false" />
+          <a
+            href="https://www.instagram.com/p/DCRzthWt5XC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             ><i class="fa-brands fa-instagram" aria-hidden="true"></i
           ></a>
         </div>
         <div class="images">
           <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <a href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          <a
+            href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             ><i class="fa-brands fa-instagram" aria-hidden="true"></i
           ></a>
         </div>
         <div class="images">
-          <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <a href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
-          ></a>
-        </div>
-        <div class="images">
-          <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <a href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-            ><i class="fa-brands fa-instagram" aria-hidden="true"></i
-          ></a>
-        </div>
-        <div class="images">
-          <img src="assests/posts/image.jpg" alt="" draggable="false" />
-          <a href="https://www.instagram.com/reel/DBzpkc5NFIX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          <img src="assests/posts/post2.jpg" alt="" draggable="false" />
+          <a
+            href="https://www.instagram.com/p/DCRzthWt5XC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             ><i class="fa-brands fa-instagram" aria-hidden="true"></i
           ></a>
         </div>
@@ -374,7 +431,7 @@
         <button class="close-modal-btn" onclick="closeModal()">✖</button>
         <h2>Contact Form</h2>
         <form id="contactForm">
-          <p id="error-msg" style="color: red;"></p>
+          <p id="error-msg" style="color: red"></p>
           <label for="name">Name</label>
           <input type="text" id="name" placeholder="Enter your name" required />
 
@@ -407,11 +464,11 @@
             <option value="Career Tarot">Career Tarot</option>
             <option value="Health Tarot">Health Tarot</option>
             <option value="Wealth Tarot">Wealth Tarot</option>
-            <option value="All types of Tarot">All Tarot</option>
+            <option value="All types of Tarot">All of the above</option>
           </select>
 
           <label for="meeting">Schedule Appointment </label>
-          <input type="datetime-local" name="meeting" id="meeting" >
+          <input type="datetime-local" name="meeting" id="meeting" />
 
           <button type="submit" class="submit-btn">Submit</button>
         </form>
@@ -421,12 +478,13 @@
     <!-- thankyou modal -->
     <div id="thankYouModal" class="modal2">
       <div class="modal-content2">
-          <span class="close-btn2" onclick="closeModal2()">✖</span>
-          <h3>Thank You!</h3>
-          <p>Your form has been submitted successfully.</p>
-          <button class="submit-btn" onclick="sendWhatsAppMessage()">WhatsApp</button>
+        <span class="close-btn2" onclick="closeModal2()">✖</span>
+        <h3>Thank You!</h3>
+        <p>Your form has been submitted successfully.</p>
+        <button class="submit-btn" onclick="sendWhatsAppMessage()">
+          WhatsApp
+        </button>
       </div>
-  </div>
-
+    </div>
   </body>
 </html>

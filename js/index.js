@@ -178,22 +178,6 @@ document.getElementById("vid").addEventListener("mouseleave", () => {
   document.getElementById("play-btn").style.opacity = 0.5;
 });
 
-// SlideShow tesimonial
-let slides = document.querySelectorAll(".slides");
-let firstSlide = 0;
-let lastSlide = slides.length - 1;
-let currentSlide = firstSlide;
-function showSlide(n) {
-  currentSlide += n;
-  if (currentSlide > lastSlide) currentSlide = firstSlide;
-  if (currentSlide < firstSlide) currentSlide = lastSlide;
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-  }
-  slides[currentSlide].classList.add("active");
-}
-// showSlide(0);
-
 // daily readings
 let SHEET_ID = "1kyRgLhapYrETeRJBgAa7cGV28nOXtJHyj0_hNsq1vCA";
 let SHEET_TITLE = "Sheet1";
@@ -251,13 +235,13 @@ form.addEventListener("submit", (e) => {
 
 function saveToDb() {
   obj = {
-    Id:"INCREMENT",
+    Id: "INCREMENT",
     Name: document.getElementById("name").value,
     Contact: document.getElementById("contact").value,
     Email: document.getElementById("email").value,
     TypeofReading: document.getElementById("tarotType").value,
     Description: document.getElementById("tarotDescription").value,
-    MeetingTime:document.getElementById('meeting').value
+    MeetingTime: document.getElementById("meeting").value,
   };
   fetch("https://sheetdb.io/api/v1/lvnh6hc1oogvx", {
     method: "POST",
@@ -270,7 +254,7 @@ function saveToDb() {
     }),
   })
     .then((response) => response.json())
-    .then((data) => console .log(data));
+    .then((data) => console.log(data));
 }
 
 function validateForm() {
@@ -367,4 +351,59 @@ function openModal() {
 
 function closeModal() {
   document.getElementById("modalOverlay").style.display = "none";
+}
+
+// get testimonials
+async function getTestimonial() {
+  let SHEET_ID = "1KaMLJCMKDk5S2aCWhC4X06mNO8AvbutpFFAWUBvCyFo";
+  let SHEET_TITLE = "Form Response 2";
+  let SHEET_RANGE = "A1:F32";
+
+  let FULL_URL =
+    "https://docs.google.com/spreadsheets/d/" +
+    SHEET_ID +
+    "/gviz/tq?sheet=" +
+    SHEET_TITLE +
+    "&range=" +
+    SHEET_RANGE;
+  try {
+    let Response = await fetch(FULL_URL);
+    let data = await Response.text();
+    data = JSON.parse(data.substr(47).slice(0, -2)).table.rows;
+    data.map((ele) => {
+      console.log(ele);
+      let slide = document.createElement("div");
+      slide.classList.add("slides");
+      slide.innerHTML = `
+          <span class="caption">${ele.c[5].v}</span>
+          <p class="personName">${ele.c[3].v}</p>
+          <p class="stars">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </p>
+      `;
+      document.querySelector(".slides-container").appendChild(slide);
+    });
+    showSlide(0);
+  } catch (error) {
+    console.log(error);
+  }
+}
+getTestimonial();
+
+let firstSlide = 0;
+let currentSlide = firstSlide;
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slides");
+  let lastSlide = slides.length - 1;
+  currentSlide += n;
+  if (currentSlide > lastSlide) currentSlide = firstSlide;
+  if (currentSlide < firstSlide) currentSlide = lastSlide;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slides[currentSlide].classList.add("active");
 }
