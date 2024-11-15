@@ -15,7 +15,7 @@
   scroll-behavior: smooth;
 }
 body {
-  width: 100vw;
+  /* width: 100vw; */
   background: linear-gradient(
     to bottom,
     var(--color1),

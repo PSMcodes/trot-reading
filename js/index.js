@@ -371,7 +371,7 @@ async function getTestimonial() {
     let data = await Response.text();
     data = JSON.parse(data.substr(47).slice(0, -2)).table.rows;
     data.map((ele) => {
-      console.log(ele);
+      // console.log(ele);
       let slide = document.createElement("div");
       slide.classList.add("slides");
       slide.innerHTML = `

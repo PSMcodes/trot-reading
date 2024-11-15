@@ -1,15 +1,12 @@
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5){
-
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
   html,
-  body{
-    width:100%;
-    overflow-x:hidden;
+  body {
+    width: 100%;
+    overflow-x: hidden;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -78,7 +75,7 @@ only screen and (min-device-pixel-ratio: 1.5){
   #booking {
     flex-direction: column;
   }
-  #booking .container{
+  #booking .container {
     width: 90% !important;
   }
   #booking img {
@@ -89,7 +86,7 @@ only screen and (min-device-pixel-ratio: 1.5){
   }
 
   #testimonial {
-    height: auto;
+    height: fit-content;
     text-align: center;
   }
   #testimonial .slides .caption {
@@ -122,6 +119,14 @@ only screen and (min-device-pixel-ratio: 1.5){
   }
   .slider-wrapper .swiper-slide-button {
     display: none;
+  }
+  #pricing .container {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    place-items: center !important;
+  }
+  #pricing .container .card {
+    margin: 5px;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -195,7 +200,7 @@ only screen and (min-device-pixel-ratio: 1.5){
     width: 85% !important;
   }
   #testimonial {
-    height: auto;
+    height: fit-content;
     text-align: center;
   }
   #testimonial .slides .caption {
@@ -229,4 +234,12 @@ only screen and (min-device-pixel-ratio: 1.5){
   .slider-wrapper .swiper-slide-button {
     display: block;
   }
-} 
+  #pricing .container {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    place-items: center !important;
+  }
+  #pricing .container .card {
+    margin: 5px !important;
+  }
+}
