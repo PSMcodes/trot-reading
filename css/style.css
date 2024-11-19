@@ -30,7 +30,7 @@ img {
 }
 
 ::selection {
-  color: var(--color5);
+  color: var(--color1);
   background: var(--color2);
 }
 
@@ -306,6 +306,7 @@ section.banner .banner-heading {
   font-size: 1em;
   width: 80%;
   margin: auto;
+  line-height: 25px;
 }
 .njcustombutton {
   padding: 10px;
@@ -330,7 +331,7 @@ section.banner .banner-heading {
       rgba(93, 63, 211, 0.5),
       rgba(93, 63, 211, 0.5)
     ),
-    url(/assests/poster2.jpg);
+    url(/assests/banner1.jpg);
   background-size: contain;
   background-position: center;
   height: 500px;
@@ -389,9 +390,11 @@ section.banner .banner-heading {
 
 #booking .container h1 {
   margin: 15px 0;
+  color: var(--color2);
 }
 
 #booking .container p {
+  color: var(--color1);
   font-size: 0.8em;
   margin: 15px 0;
 }
@@ -440,17 +443,20 @@ section.banner .banner-heading {
 
 #testimonial {
   padding: 10px;
-  height: 500px;
+  min-height: 500px;
   background: linear-gradient(
       45deg,
       rgba(76, 0, 130, 0.5),
       rgba(76, 0, 130, 0.5)
     ),
-    url(/assests/IMG_7875.WEBP);
+    url(/assests/banner2.jpg);
+    background-size: cover;
+    background-position: center;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  /* height: auto; */
 }
 #testimonial h3 {
   color: var(--color4);
@@ -500,7 +506,7 @@ section.banner .banner-heading {
   text-align: center;
   margin: 30px;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 1.5em;
+  font-size: 1.2rem;
 }
 
 #testimonial .slides .personName {

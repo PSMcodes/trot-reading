@@ -1,3 +1,5 @@
+AOS.init();
+
 particlesJS("particle", {
   particles: {
     number: {

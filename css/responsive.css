@@ -242,4 +242,7 @@
   #pricing .container .card {
     margin: 5px !important;
   }
+  footer .footerheading {
+    font-size: 2rem;
+  }
 }

@@ -41,6 +41,9 @@
     <script defer src="js/particle.js"></script>
     <script defer src="js/index.js"></script>
 
+    <!-- Animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- meta tags -->
     <meta property="og:title" content="Neha Jella | Tarot card reader" />
     <meta
@@ -123,7 +126,7 @@
       </nav>
       <section class="banner" id="home">
         <div id="particle"></div>
-        <span class="bgText">Neha Jella</span>
+        <span class="bgText" >Neha Jella</span>
         <img
           src="assests/banner.png"
           alt=""
@@ -179,8 +182,8 @@
     </div>
     <!-- booking -->
     <section id="booking">
-      <img src="assests/poster3.png" alt="" draggable="false" />
-      <div class="container">
+      <img src="assests/poster3.png" alt="" draggable="false" data-aos="zoom-in" />
+      <div class="container" data-aos="fade-down-left"  data-aos-offset="200" data-aos-delay="300" data-aos-duration="1000">
         <h1>Discover Your Own Path</h1>
         <p>
           Empower yourself with insights that illuminate your unique journey.
@@ -196,7 +199,7 @@
       <h1 class="heading">Daily Readings</h1>
       <div class="container">
         <h1 id="readingHeader">Title</h1>
-        <div id="readingContent">
+        <div id="readingContent" data-aos-duration="1500" data-aos="fade-down">
           Begin each day with insight and guidance through our Daily Readings.
           Discover fresh perspectives, find clarity, and navigate challenges
           with ease as the cards reveal what’s in store for you today.
