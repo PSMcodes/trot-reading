@@ -207,6 +207,7 @@ section.banner .banner-heading {
   color: var(--color2);
   display: flex;
   flex-direction: column;
+  text-shadow: 5px 5px 5px  var(--color1) , -5px -5px 15px var(--color1);
 }
 
 /* marquee */
